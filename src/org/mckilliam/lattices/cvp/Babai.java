@@ -1,6 +1,3 @@
-/*
- */
-
 package org.mckilliam.lattices.cvp;
 
 import Jama.Matrix;
