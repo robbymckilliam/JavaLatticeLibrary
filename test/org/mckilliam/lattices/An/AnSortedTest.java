@@ -1,6 +1,5 @@
 package org.mckilliam.lattices.An;
 
-import org.mckilliam.lattices.An.AnSorted;
 import junit.framework.TestCase;
 import pubsim.VectorFunctions;
 import org.mckilliam.distributions.Uniform;
