@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import org.mckilliam.lattices.util.ZnWithinSphere;
 import java.util.Collection;

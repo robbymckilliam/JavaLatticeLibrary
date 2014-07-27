@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import org.junit.*;
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.decoder.KissingNumber;
+import org.mckilliam.lattices.KissingNumber;
 
 /**
  *

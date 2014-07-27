@@ -1,6 +1,7 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices;
 
 import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.cvp.SphereDecoder;
 
 /**
  * Returns the kissing number of a lattice.  This finds all the short vector

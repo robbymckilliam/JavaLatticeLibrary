@@ -7,7 +7,7 @@ import org.jgrapht.alg.StoerWagnerMinimumCut;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 import static pubsim.VectorFunctions.matrixMultVector;
-import org.mckilliam.lattices.decoder.ShortVector;
+import org.mckilliam.lattices.svp.ShortVector;
 import org.mckilliam.lattices.firstkind.LatticeOfFirstKind;
 
 /**

@@ -10,7 +10,7 @@ import pubsim.Util;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.AbstractLattice;
 import org.mckilliam.lattices.An.AnFastSelect;
-import org.mckilliam.lattices.decoder.KissingNumber;
+import org.mckilliam.lattices.KissingNumber;
 
 /**
  * Class for the lattice Vnm, ie the integer lattice that is the
@@ -164,7 +164,7 @@ public class Vnm extends AbstractLattice{
         @Override
         public long kissingNumber() {
             if(kissingnumber == 0){
-                org.mckilliam.lattices.decoder.KissingNumber k = new KissingNumber(this, norm());
+                org.mckilliam.lattices.KissingNumber k = new KissingNumber(this, norm());
                 kissingnumber = k.kissingNumber();
             }
             return kissingnumber;
@@ -187,7 +187,7 @@ public class Vnm extends AbstractLattice{
         @Override
         public long kissingNumber() {
             if(kissingnumber == 0){
-                org.mckilliam.lattices.decoder.KissingNumber k = new KissingNumber(this, norm());
+                org.mckilliam.lattices.KissingNumber k = new KissingNumber(this, norm());
                 kissingnumber = k.kissingNumber();
             }
             return kissingnumber;

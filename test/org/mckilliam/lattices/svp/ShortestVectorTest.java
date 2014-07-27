@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.svp;
 
-import org.mckilliam.lattices.decoder.ShortVectorSphereDecoded;
+import org.mckilliam.lattices.svp.ShortVectorSphereDecoded;
 import static org.junit.Assert.assertEquals;
 import org.junit.*;
 import static pubsim.VectorFunctions.sum2;

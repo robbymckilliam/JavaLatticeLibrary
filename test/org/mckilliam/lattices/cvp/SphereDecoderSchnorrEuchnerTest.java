@@ -1,7 +1,7 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
-import org.mckilliam.lattices.decoder.SphereDecoder;
-import org.mckilliam.lattices.decoder.SphereDecoderSchnorrEuchner;
+import org.mckilliam.lattices.cvp.SphereDecoder;
+import org.mckilliam.lattices.cvp.SphereDecoderSchnorrEuchner;
 import Jama.Matrix;
 import static org.junit.Assert.assertTrue;
 import org.junit.*;

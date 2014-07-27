@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.svp;
 
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.cvp.SphereDecoder;
 
 /**
  *

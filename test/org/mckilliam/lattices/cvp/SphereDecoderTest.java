@@ -3,10 +3,10 @@
  * and open the template in the editor.
  */
 
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
-import org.mckilliam.lattices.decoder.SphereDecoder;
-import org.mckilliam.lattices.decoder.Babai;
+import org.mckilliam.lattices.cvp.SphereDecoder;
+import org.mckilliam.lattices.cvp.Babai;
 import Jama.Matrix;
 import static org.junit.Assert.assertTrue;
 import org.junit.*;

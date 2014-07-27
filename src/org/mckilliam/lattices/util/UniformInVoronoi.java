@@ -5,7 +5,7 @@ import org.mckilliam.distributions.Uniform;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
 import org.mckilliam.lattices.NearestPointAlgorithmInterface;
-import org.mckilliam.lattices.decoder.SphereDecoder;
+import org.mckilliam.lattices.cvp.SphereDecoder;
 import org.mckilliam.distributions.processes.NoiseVector;
 import pubsim.VectorFunctions;
 

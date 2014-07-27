@@ -4,7 +4,7 @@ import Jama.Matrix;
 import Jama.QRDecomposition;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.decoder.ShortVectorSphereDecoded;
+import org.mckilliam.lattices.svp.ShortVectorSphereDecoded;
 
 /*
  * Simple-minded implementation of Hermite-Korkin-Zolotarev reduction.

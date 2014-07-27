@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.LatticeInterface;

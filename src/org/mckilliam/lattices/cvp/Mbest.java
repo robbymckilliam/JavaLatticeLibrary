@@ -1,7 +1,7 @@
 /*
  */
 
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import java.util.Map.Entry;
 import java.util.TreeMap;

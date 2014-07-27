@@ -1,4 +1,4 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import static pubsim.VectorFunctions.matrixMultVector;
 import org.mckilliam.lattices.LatticeInterface;

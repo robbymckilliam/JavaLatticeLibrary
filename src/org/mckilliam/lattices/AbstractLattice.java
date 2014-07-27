@@ -3,8 +3,7 @@ package org.mckilliam.lattices;
 import Jama.Matrix;
 import static pubsim.Util.*;
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.decoder.KissingNumber;
-import org.mckilliam.lattices.decoder.ShortVectorSphereDecoded;
+import org.mckilliam.lattices.svp.ShortVectorSphereDecoded;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 
@@ -108,7 +107,7 @@ public abstract class AbstractLattice implements LatticeInterface {
     @Override
     public long kissingNumber() {
         if(kissingnumber == 0){
-            org.mckilliam.lattices.decoder.KissingNumber k = new KissingNumber(this);
+            org.mckilliam.lattices.KissingNumber k = new KissingNumber(this);
             kissingnumber = k.kissingNumber();
         }
         return kissingnumber;

@@ -1,16 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
  */
 
-package pubsim.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import Jama.Matrix;
-import pubsim.lattices.Lattice;
-import pubsim.lattices.reduction.LLL;
-import pubsim.lattices.reduction.LatticeReduction;
 import pubsim.VectorFunctions;
-import pubsim.lattices.NearestPointAlgorithm;
+import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.reduction.LLL;
+import org.mckilliam.lattices.reduction.LatticeReduction;
 
 /**
  * Implements the Babai nearest plane algorithm.
@@ -18,8 +16,9 @@ import pubsim.lattices.NearestPointAlgorithm;
  * This does not perform the LLL reduction first.
  * Use BabaiLLL for that.
  * @author Robby McKilliam
+ * Modified to use any sort of LatticeReduction (with LLL as the default)
  */
-public class Babai implements NearestPointAlgorithm {
+public class Babai implements NearestPointAlgorithmInterface {
 
     /** Generator matrix of the lattice */
     protected Matrix G;
@@ -43,7 +42,7 @@ public class Babai implements NearestPointAlgorithm {
     protected double[] yr;
     
     /** LLL reduced basis matrix. G = BU */
-    protected Matrix B; 
+    final protected Matrix B; 
     
     /** 
      * Unimodular transform between G and it's LLL
@@ -58,9 +57,14 @@ public class Babai implements NearestPointAlgorithm {
     protected Matrix Q, Qtrans;
     
     protected int n, m;
-    protected LatticeReduction lll;
+    protected LatticeReduction reducer;
     
-    public Babai(Lattice L){
+    public Babai(LatticeInterface L){
+	this(L, new LLL());
+    }
+
+    public Babai(LatticeInterface L, LatticeReduction lr) {
+        reducer = lr;
         G = L.getGeneratorMatrix().copy();
         m = G.getRowDimension();
         n = G.getColumnDimension();
@@ -69,9 +73,8 @@ public class Babai implements NearestPointAlgorithm {
         x = new double[m];
         yr = new double[n];
         
-        lll = new LLL();
-        B = lll.reduce(G);
-        U = lll.getUnimodularMatrix();
+        B = reducer.reduce(G);
+        U = reducer.getUnimodularMatrix();
         Jama.QRDecomposition QR = new Jama.QRDecomposition(B);
         R = QR.getR();
         Q = QR.getQ();
@@ -131,5 +134,5 @@ public class Babai implements NearestPointAlgorithm {
             for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
         this.nearestPoint(yDoubletoy);
     }
-    
+
 }

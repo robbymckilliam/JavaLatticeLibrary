@@ -4,7 +4,7 @@ import Jama.Matrix;
 import java.util.HashSet;
 import java.util.Set;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.decoder.AllClosestPoints;
+import org.mckilliam.lattices.cvp.AllClosestPoints;
 import org.mckilliam.lattices.util.AbstractPointEnumerator;
 import org.mckilliam.lattices.util.IntegerVectors;
 import org.mckilliam.lattices.util.PointEnumerator;

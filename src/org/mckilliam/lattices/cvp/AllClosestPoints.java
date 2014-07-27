@@ -1,4 +1,4 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import Jama.Matrix;
 import java.util.HashSet;

@@ -10,7 +10,7 @@ import static pubsim.VectorFunctions.distance_between;
 import org.mckilliam.distributions.Gaussian;
 import org.mckilliam.distributions.processes.NoiseVector;
 import static org.mckilliam.lattices.E8.dMat;
-import org.mckilliam.lattices.decoder.SphereDecoder;
+import org.mckilliam.lattices.cvp.SphereDecoder;
 import org.mckilliam.lattices.util.PowerOfEuclideanNorm;
 
 /**

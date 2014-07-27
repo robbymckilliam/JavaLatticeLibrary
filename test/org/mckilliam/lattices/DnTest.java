@@ -4,7 +4,7 @@ import org.mckilliam.lattices.Dn;
 import Jama.Matrix;
 import junit.framework.TestCase;
 import org.mckilliam.distributions.Gaussian;
-import org.mckilliam.lattices.decoder.SphereDecoder;
+import org.mckilliam.lattices.cvp.SphereDecoder;
 import org.mckilliam.distributions.processes.NoiseVector;
 import pubsim.VectorFunctions;
 

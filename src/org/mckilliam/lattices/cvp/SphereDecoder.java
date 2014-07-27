@@ -1,4 +1,4 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;

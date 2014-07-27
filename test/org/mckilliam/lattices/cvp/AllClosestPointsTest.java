@@ -1,6 +1,6 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
-import org.mckilliam.lattices.decoder.AllClosestPoints;
+import org.mckilliam.lattices.cvp.AllClosestPoints;
 import Jama.Matrix;
 import java.util.Set;
 import org.junit.After;

@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.decoder.ShortVectorSphereDecoded;
+import org.mckilliam.lattices.svp.ShortVectorSphereDecoded;
 
 /**
  *

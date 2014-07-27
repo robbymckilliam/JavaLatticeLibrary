@@ -116,7 +116,7 @@ import org.mckilliam.lattices.reduction.LLL;
      * not be a bad idea to make a general functional version of this.
      * It would be able to replace the clunky threaded PointInSphere.
      */
-    private class SphereDecoder extends org.mckilliam.lattices.decoder.SphereDecoder{
+    private class SphereDecoder extends org.mckilliam.lattices.cvp.SphereDecoder{
 
         public SphereDecoder(LatticeInterface L){
             super(L);

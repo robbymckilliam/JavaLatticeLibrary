@@ -6,7 +6,7 @@ package org.mckilliam.lattices.Anstar;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.NearestPointAlgorithmStandardNumenclature;
-import org.mckilliam.lattices.decoder.KissingNumber;
+import org.mckilliam.lattices.KissingNumber;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 

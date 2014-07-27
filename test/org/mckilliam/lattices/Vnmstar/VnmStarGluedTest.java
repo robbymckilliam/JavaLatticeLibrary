@@ -10,7 +10,7 @@ import org.mckilliam.lattices.Vnmstar.VnmStar;
 import java.util.Random;
 import org.mckilliam.lattices.Anstar.Anstar;
 import org.mckilliam.lattices.Anstar.AnstarSorted;
-import org.mckilliam.lattices.decoder.SphereDecoder;
+import org.mckilliam.lattices.cvp.SphereDecoder;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

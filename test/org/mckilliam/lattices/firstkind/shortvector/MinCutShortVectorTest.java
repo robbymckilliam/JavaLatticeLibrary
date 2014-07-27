@@ -6,7 +6,7 @@ import org.junit.*;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.An.AnSorted;
 import org.mckilliam.lattices.Anstar.AnstarSorted;
-import org.mckilliam.lattices.decoder.ShortVectorSphereDecoded;
+import org.mckilliam.lattices.svp.ShortVectorSphereDecoded;
 import org.mckilliam.lattices.firstkind.LatticeOfFirstKind;
 
 /**

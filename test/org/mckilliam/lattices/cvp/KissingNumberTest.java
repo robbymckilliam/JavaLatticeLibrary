@@ -1,6 +1,6 @@
-package org.mckilliam.lattices.decoder;
+package org.mckilliam.lattices.cvp;
 
-import org.mckilliam.lattices.decoder.KissingNumber;
+import org.mckilliam.lattices.KissingNumber;
 import static org.junit.Assert.assertEquals;
 import org.junit.*;
 import org.mckilliam.lattices.Zn;
