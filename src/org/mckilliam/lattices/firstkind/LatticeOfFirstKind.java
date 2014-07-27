@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.firstkind;
 
 import Jama.Matrix;
-import pubsim.distributions.RealRandomVariable;
+import org.mckilliam.distributions.RealRandomVariable;
 import org.mckilliam.lattices.Lattice;
 import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
 

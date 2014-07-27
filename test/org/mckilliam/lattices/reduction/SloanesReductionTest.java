@@ -1,14 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.mckilliam.lattices.reduction;
 
-import org.mckilliam.lattices.reduction.LLL;
-import org.mckilliam.lattices.reduction.SloanesReduction;
 import Jama.Matrix;
-import pubsim.distributions.Gaussian;
+import org.mckilliam.distributions.Gaussian;
+import org.mckilliam.distributions.RealRandomVariable;
 import org.mckilliam.lattices.leech.Leech;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -40,6 +34,19 @@ public class SloanesReductionTest {
 
     @After
     public void tearDown() {
+    }
+    
+        /**
+     * Generate m x n matrix with random elements taken from given distribution.
+     */
+    public static Matrix randomMatrix(int m, int n, RealRandomVariable noise){
+        Matrix M = new Matrix(m, n);
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                M.set(i,j, noise.noise());
+            }
+        }
+        return M;
     }
 
     @Test
@@ -76,7 +83,7 @@ public class SloanesReductionTest {
     public void testGetProjectionVector() {
         System.out.println("test get projection vector");
         int n = 24;
-        Matrix B = VectorFunctions.randomMatrix(n, n, new Gaussian(0, 1.0));
+        Matrix B = randomMatrix(n, n, new Gaussian(0, 1.0));
         Matrix L = SloanesReduction.upperTriangularBasis(B);
         Matrix Lw = SloanesReduction.computeSlonesLw(L, 1);
         Matrix Lt = SloanesReduction.specialColumnReduce(Lw);
@@ -112,7 +119,7 @@ public class SloanesReductionTest {
         
         double mean = 0, var = 0;
         for(int i = 0; i < iters; i++){
-            Matrix B = VectorFunctions.randomMatrix(n, n, new Gaussian(0, 1.0));
+            Matrix B = randomMatrix(n, n, new Gaussian(0, 1.0));
             Matrix L = new LLL().reduce(B); //LLL seems to make B smaller.
             L = SloanesReduction.upperTriangularBasis(L);
             //Matrix L = SloanesReduction.upperTriangularBasis(B);

@@ -3,8 +3,8 @@ package org.mckilliam.lattices.An;
 import org.mckilliam.lattices.An.AnSorted;
 import junit.framework.TestCase;
 import pubsim.VectorFunctions;
-import pubsim.distributions.Uniform;
-import pubsim.distributions.processes.NoiseVector;
+import org.mckilliam.distributions.Uniform;
+import org.mckilliam.distributions.processes.NoiseVector;
 
 /**
  *

@@ -1,16 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.mckilliam.lattices;
 
 import org.mckilliam.lattices.Dn;
 import Jama.Matrix;
 import junit.framework.TestCase;
-import pubsim.distributions.Gaussian;
+import org.mckilliam.distributions.Gaussian;
 import org.mckilliam.lattices.decoder.SphereDecoder;
-import pubsim.distributions.processes.NoiseVector;
+import org.mckilliam.distributions.processes.NoiseVector;
 import pubsim.VectorFunctions;
 
 /**

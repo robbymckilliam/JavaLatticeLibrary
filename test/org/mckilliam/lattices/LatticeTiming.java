@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.mckilliam.lattices;
 
 import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
@@ -12,7 +7,7 @@ import java.io.FileWriter;
 import java.util.Date;
 import java.util.Vector;
 import static pubsim.Range.range;
-import pubsim.distributions.Gaussian;
+import org.mckilliam.distributions.Gaussian;
 import org.mckilliam.lattices.Anm.AnmGlued;
 
 /**

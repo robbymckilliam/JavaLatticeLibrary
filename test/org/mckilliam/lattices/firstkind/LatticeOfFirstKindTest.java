@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import pubsim.VectorFunctions;
-import pubsim.distributions.Uniform;
+import org.mckilliam.distributions.Uniform;
 import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.Anstar.Anstar;
 import org.mckilliam.lattices.Anstar.AnstarLinear;

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mckilliam.lattices;
 
 import org.mckilliam.lattices.E8;
@@ -11,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.*;
 import pubsim.VectorFunctions;
 import static pubsim.VectorFunctions.distance_between;
-import pubsim.distributions.Gaussian;
-import pubsim.distributions.processes.NoiseVector;
+import org.mckilliam.distributions.Gaussian;
+import org.mckilliam.distributions.processes.NoiseVector;
 import static org.mckilliam.lattices.E8.dMat;
 import org.mckilliam.lattices.decoder.SphereDecoder;
 import org.mckilliam.lattices.util.PowerOfEuclideanNorm;

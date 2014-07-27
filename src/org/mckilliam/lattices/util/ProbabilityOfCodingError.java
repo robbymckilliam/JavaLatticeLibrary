@@ -1,6 +1,6 @@
 package org.mckilliam.lattices.util;
 
-import pubsim.distributions.NoiseGenerator;
+import org.mckilliam.distributions.NoiseGenerator;
 import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
 
 /**
