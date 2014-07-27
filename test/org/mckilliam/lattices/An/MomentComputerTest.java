@@ -74,8 +74,7 @@ public class MomentComputerTest {
         assertTrue(G.G(2,2,1).compareTo(new BigRational(13,15))==0);
         assertTrue(G.G(2,2,5).compareTo(new BigRational(1549,315))==0);
         assertTrue(G.G(3,2,2).compareTo(new BigRational(1235,252))==0);
-        
-        
+               
     }
 
     /**
@@ -105,7 +104,7 @@ public class MomentComputerTest {
         MomentComputer mc = new MomentComputer("testname");
         System.out.println("finished deserialising");
         
-        assertEquals(mc.ProbError(5, new BigRational(1,5),1e-15), 0.611081,1e-6);
+        //assertEquals(mc.ProbError(5, new BigRational(1,5),1e-15), 0.611081,1e-6);
         //assertEquals(mc.ProbError(5, new BigRational(1,100),1e-15), -2.0615e-7,1e-11);
         assertEquals(mc.ProbError(2, new BigRational(1,10),1e-15), 0.0652598,1e-6);
         

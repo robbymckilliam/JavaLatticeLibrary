@@ -83,10 +83,10 @@ public class AnTest {
         AnSorted instance = new AnSorted(n);
         
         PowerOfEuclideanNorm mcc = new PowerOfEuclideanNorm(instance, 1);
-        mcc.uniformlyDistributed(1000000);
+        mcc.uniformlyDistributed(100000);
         double momentmc = mcc.moment();
         
-        assertEquals(momentmc, instance.secondMoment(), 0.01);
+        assertEquals(momentmc, instance.secondMoment(), 0.1);
 
     }
     
