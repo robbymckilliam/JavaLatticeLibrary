@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mckilliam.lattices.An;
 
 import org.mckilliam.lattices.An.MomentComputer;
@@ -104,7 +100,7 @@ public class MomentComputerTest {
         MomentComputer mc = new MomentComputer("testname");
         System.out.println("finished deserialising");
         
-        //assertEquals(mc.ProbError(5, new BigRational(1,5),1e-15), 0.611081,1e-6);
+        assertEquals(mc.ProbError(5, new BigRational(1,5),1e-15), 0.611081,1e-6);
         //assertEquals(mc.ProbError(5, new BigRational(1,100),1e-15), -2.0615e-7,1e-11);
         assertEquals(mc.ProbError(2, new BigRational(1,10),1e-15), 0.0652598,1e-6);
         
