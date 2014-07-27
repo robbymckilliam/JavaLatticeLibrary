@@ -7,7 +7,7 @@ import org.mckilliam.distributions.processes.NoiseVector;
 
 /**
  *
- * @author Robby
+ * @author Robby McKilliam
  */
 public class AnSortedTest extends TestCase {
     

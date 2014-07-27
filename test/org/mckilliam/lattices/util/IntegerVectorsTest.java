@@ -1,6 +1,5 @@
 package org.mckilliam.lattices.util;
 
-import org.mckilliam.lattices.util.IntegerVectors;
 import Jama.Matrix;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,7 +7,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pubsim.VectorFunctions;
 
 /**
  *
@@ -35,15 +33,20 @@ public class IntegerVectorsTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of nextElement method, of class IntegerVectors.
-     */
     @Test
-    public void testNextElement() {
-        System.out.println("nextElement");
-        IntegerVectors ivs = new IntegerVectors(2,2);
-        while(ivs.hasMoreElements())
-            System.out.println(VectorFunctions.print(ivs.nextElement()));
+    public void testIntegerVectors() {
+        System.out.println("test the modified IntegerVectors class");
+        for (int n = 1; n <= 4; n++) {
+            for (int r = 2; r <= 5; r++) {
+                IntegerVectors ivs = new IntegerVectors(n, r);
+                int count = 0;
+                while (ivs.hasMoreElements()) {
+                    Matrix v = ivs.nextElement();
+                    //System.out.println(VectorFunctions.print(v));
+                    count++;
+                }
+                assertEquals((int) Math.pow(r, n), count);
+            }
+        }
     }
-    
 }

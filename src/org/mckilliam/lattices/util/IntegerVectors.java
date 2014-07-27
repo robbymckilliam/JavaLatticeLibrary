@@ -10,7 +10,7 @@ public class IntegerVectors
         extends AbstractPointEnumerator
         implements PointEnumerator{
 
-    private final Matrix U;
+    protected final Matrix U;
     public final int N, r;
     public final long numsamples;
     protected long counter;
@@ -23,6 +23,7 @@ public class IntegerVectors
      */
     public IntegerVectors(int N, int r){
         U = new Matrix(N, 1, 0.0);
+        U.set(0, 0, -1); //setup so that first element return is zero
         this.N = N;
         this.r = r;
         numsamples = (long)Math.pow(r, N);
@@ -46,13 +47,14 @@ public class IntegerVectors
 
     @Override
     public Matrix nextElement() {
+        if(finished) throw new RuntimeException("No more elements!");
         addto(0);
         counter++;
         if(counter >= numsamples) finished = true;
         return U;
     }
 
-    /** This should be tail recursively optimisable (how does I assert that in java) */
+    /** This is written tail recursively, but Java doesn't support tail call optimisation unfortunately. */
     protected void addto(int i){
         if(U.get(i, 0) >= r - 1){
             U.set(i, 0, 0.0);
