@@ -61,7 +61,12 @@ public class Mbest extends Babai {
         Q = QR.getQ();
         Qtrans = Q.transpose();
     }
-
+    
+    /** Returns an Mbest algorithm that does not perform any reduction first */
+    public static Mbest MbestNoLLL(LatticeInterface L, int M) {
+        return new Mbest(L,M,new org.mckilliam.lattices.reduction.None());
+    }
+            
     @Override
     public void nearestPoint(double[] y) {
         if(m != y.length)

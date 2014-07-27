@@ -80,6 +80,11 @@ public class Babai implements ClosestVectorInterface {
         Q = QR.getQ();
         Qtrans = Q.transpose();
     }
+    
+    /** Returns an Babai algorithm that does not perform any reduction first */
+    public static Babai BabaiNoLLL(LatticeInterface L, int M) {
+        return new Babai(L,new org.mckilliam.lattices.reduction.None());
+    }
 
     @Override
     public void nearestPoint(double[] y) {
