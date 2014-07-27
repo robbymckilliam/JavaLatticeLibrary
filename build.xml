@@ -1,0 +1,57 @@
+<project name="JavaLatticeLibrary">
+  <property environment="env"/>
+  <property name="base.dir" value="." />
+  <property name="sources.dir" value="${base.dir}" />
+  <property name="build.dir" value="${base.dir}/build" />
+
+  <target name="init">
+    <path id="build.classpath">
+      <fileset dir="${base.dir}/lib">
+	<include name="*.jar" />
+	<exclude name="JavaLatticeLibrary.jar" />
+      </fileset>
+    </path>
+  </target>
+
+  <target name="build" depends="init">
+    <mkdir dir="${build.dir}" />
+    <javac srcdir="${sources.dir}"
+            destdir="${build.dir}"
+            classpathref="build.classpath"
+	    includeantruntime="false">
+      <!--<compilerarg value="-Xlint:deprecation" />-->
+      <!--<compilerarg value="-Xlint:unchecked" />-->
+      <include name="src/**/*.java"   />
+      <include name="test/**/*.java"   />
+    </javac>
+    <jar destfile="${base.dir}/lib/JavaLatticeLibrary.jar">
+      <fileset dir="src/"/>
+      <fileset dir="test/"/>
+      <fileset dir="build/"/>
+    </jar>
+  </target>
+
+  <target name="clean">
+    <delete>
+      <fileset dir="${build.dir}" includes="**/*.class" />
+    </delete>
+  </target>
+
+  <target name="test" depends="init">
+    <junit printsummary="yes">
+      <classpath>
+	<fileset dir="${base.dir}/lib">
+	  <include name="*.jar" />
+	</fileset>
+      </classpath>
+      <!-- <formatter type="plain" usefile="false"/> -->
+      <batchtest fork="yes" todir="${base.dir}">
+	<fileset dir="${build.dir}">
+	  <include name="**/*Test.class"/>
+	</fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+
+</project>
