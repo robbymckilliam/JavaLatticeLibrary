@@ -4,7 +4,7 @@ import org.mckilliam.lattices.Anstar.Anstar;
 import pubsim.FastSelection;
 import pubsim.IndexedDouble;
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  * Simple linear time An algorithm using the Rivest Tarjan
@@ -12,7 +12,7 @@ import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
  * recent version of SPLAG.
  * @author Robby McKilliam
  */
-public class AnFastSelect extends An implements LatticeAndNearestPointAlgorithmInterface {
+public class AnFastSelect extends An implements LatticeAndClosestVectorInterface {
 
     protected final IndexedDouble[] z;
     

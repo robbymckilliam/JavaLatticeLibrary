@@ -7,6 +7,6 @@ package org.mckilliam.lattices;
  * 
  * @author Robby McKilliam
  */
-public interface LatticeAndNearestPointAlgorithmInterface extends LatticeInterface, NearestPointAlgorithmInterface {
+public interface LatticeAndClosestVectorInterface extends LatticeInterface, ClosestVectorInterface {
     
 }

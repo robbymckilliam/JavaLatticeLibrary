@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import java.io.Serializable;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  * Abstract class for brute forcing approximating properties of lattices.
@@ -10,12 +10,12 @@ import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
  */
 abstract class PropertyCalculator implements Serializable{
 
-    protected final LatticeAndNearestPointAlgorithmInterface L;
+    protected final LatticeAndClosestVectorInterface L;
     protected int numsamples;
 
     protected PropertyCalculator(){L = null;}
 
-    public PropertyCalculator(LatticeAndNearestPointAlgorithmInterface L){
+    public PropertyCalculator(LatticeAndClosestVectorInterface L){
         this.L = L;
     }
 

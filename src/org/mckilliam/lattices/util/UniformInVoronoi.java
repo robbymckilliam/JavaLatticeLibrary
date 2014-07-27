@@ -3,8 +3,8 @@ package org.mckilliam.lattices.util;
 import Jama.Matrix;
 import org.mckilliam.distributions.Uniform;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
-import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.ClosestVectorInterface;
 import org.mckilliam.lattices.cvp.SphereDecoder;
 import org.mckilliam.distributions.processes.NoiseVector;
 import pubsim.VectorFunctions;
@@ -19,7 +19,7 @@ public class UniformInVoronoi
         implements PointEnumerator{
     
     private int numsamples = 1000, count = 0;
-    protected NearestPointAlgorithmInterface decoder;
+    protected ClosestVectorInterface decoder;
     private NoiseVector nv;
     Matrix B;
 
@@ -43,7 +43,7 @@ public class UniformInVoronoi
      * @param L is the lattice with included nearest point algorithm.
      * @param samples is the number of samples used per dimension
      */
-    public UniformInVoronoi(LatticeAndNearestPointAlgorithmInterface L, int samples){
+    public UniformInVoronoi(LatticeAndClosestVectorInterface L, int samples){
         B = L.getGeneratorMatrix();
         decoder = L;
         numsamples = samples;

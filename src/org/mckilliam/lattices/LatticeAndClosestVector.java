@@ -12,23 +12,23 @@ import org.mckilliam.lattices.util.PointEnumerator;
  * algorithms by using the appropriate constructor
  * @author Robby McKilliam
  */
-public class LatticeAndNearestPointAlgorithm extends Lattice implements LatticeAndNearestPointAlgorithmInterface {
+public class LatticeAndClosestVector extends Lattice implements LatticeAndClosestVectorInterface {
 
-    private final NearestPointAlgorithmInterface decoder;
+    private final ClosestVectorInterface decoder;
 
-    public LatticeAndNearestPointAlgorithm(Matrix B){
+    public LatticeAndClosestVector(Matrix B){
         super(B);
         decoder = new SphereDecoderSchnorrEuchner(this);
         //decoder = new SphereDecoder(this);
     }
 
-    public LatticeAndNearestPointAlgorithm(double[][] B){
+    public LatticeAndClosestVector(double[][] B){
         super(new Matrix(B));
         decoder = new SphereDecoderSchnorrEuchner(this);
         //decoder = new SphereDecoder(this);
     }
 
-     public LatticeAndNearestPointAlgorithm(Matrix B, NearestPointAlgorithmInterface np){
+     public LatticeAndClosestVector(Matrix B, ClosestVectorInterface np){
         super(B);
         decoder = np;
     }

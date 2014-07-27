@@ -16,7 +16,7 @@ import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.AnstarSorted;
 import org.mckilliam.lattices.Lattice;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.Zn;
 
 /**
@@ -111,7 +111,7 @@ public class MbestTest {
         double del = 0.0001;
         for(int t = 0; t < iters; t++){
             int n = r.nextInt(100) + 5;
-            LatticeAndNearestPointAlgorithmInterface lattice = new AnstarSorted(n-1);
+            LatticeAndClosestVectorInterface lattice = new AnstarSorted(n-1);
             Matrix G = lattice.getGeneratorMatrix();
 
             Mbest instance = new Mbest(lattice,n);

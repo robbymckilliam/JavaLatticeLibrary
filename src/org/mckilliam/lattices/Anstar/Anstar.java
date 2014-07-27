@@ -5,7 +5,7 @@
 package org.mckilliam.lattices.Anstar;
 
 import Jama.Matrix;
-import org.mckilliam.lattices.NearestPointAlgorithmStandardNumenclature;
+import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
 import org.mckilliam.lattices.KissingNumber;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
@@ -14,7 +14,7 @@ import org.mckilliam.lattices.util.PointEnumerator;
  * Abstract class for any Anstar algorithm
  * @author robertm
  */
-public abstract class Anstar extends NearestPointAlgorithmStandardNumenclature {
+public abstract class Anstar extends ClosestVectorStandardNumenclature {
     
     public Anstar(int n){
         super(n);

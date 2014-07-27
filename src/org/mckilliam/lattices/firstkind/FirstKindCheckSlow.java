@@ -8,7 +8,7 @@ import pubsim.CombinationEnumerator;
 import pubsim.VectorFunctions;
 import static pubsim.VectorFunctions.dot;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithm;
+import org.mckilliam.lattices.LatticeAndClosestVector;
 
 /**
  * Tests whether a given lattice is of first kind or not.  This slow implementation searches
@@ -32,7 +32,7 @@ public class FirstKindCheckSlow {
    
     /** Asserts if the lattice with generator B is of first kind */
     public FirstKindCheckSlow(Matrix B) {
-        this(new LatticeAndNearestPointAlgorithm(B));
+        this(new LatticeAndClosestVector(B));
     }
     
     /** Asserts if the lattice L is of first kind */

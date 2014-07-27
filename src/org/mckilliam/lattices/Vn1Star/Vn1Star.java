@@ -7,13 +7,13 @@ package org.mckilliam.lattices.Vn1Star;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.Anstar.AnstarVaughan;
-import org.mckilliam.lattices.NearestPointAlgorithmStandardNumenclature;
+import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
 
 /**
  *
  * @author Robby McKilliam
  */
-public abstract class Vn1Star extends NearestPointAlgorithmStandardNumenclature{
+public abstract class Vn1Star extends ClosestVectorStandardNumenclature{
     
     public Vn1Star(int n){
         super(n);

@@ -6,8 +6,8 @@ import java.util.Set;
 import pubsim.VectorFunctions;
 import static pubsim.VectorFunctions.matrixMultVector;
 import static pubsim.VectorFunctions.columnMatrix;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithm;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVector;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
 
 /**
@@ -19,13 +19,13 @@ public class AllClosestPoints {
     
     protected final ModSphereDecoder sd;
     
-    protected final LatticeAndNearestPointAlgorithmInterface L;
+    protected final LatticeAndClosestVectorInterface L;
     
     public AllClosestPoints(LatticeInterface L) {
-        this(new LatticeAndNearestPointAlgorithm(L.getGeneratorMatrix()));
+        this(new LatticeAndClosestVector(L.getGeneratorMatrix()));
     } 
     
-    public AllClosestPoints(LatticeAndNearestPointAlgorithmInterface L) {
+    public AllClosestPoints(LatticeAndClosestVectorInterface L) {
         this.L = L;
         sd = new ModSphereDecoder(L);
     }

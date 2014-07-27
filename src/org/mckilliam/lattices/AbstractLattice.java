@@ -125,7 +125,7 @@ public abstract class AbstractLattice implements LatticeInterface {
      /** @return an enumeration of the relevant vectors for this lattice */
     @Override
     public PointEnumerator relevantVectors() {
-        return new RelevantVectors(new LatticeAndNearestPointAlgorithm(this.getGeneratorMatrix()));
+        return new RelevantVectors(new LatticeAndClosestVector(this.getGeneratorMatrix()));
     }
     
 }

@@ -2,8 +2,8 @@ package org.mckilliam.lattices.util;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
-import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.ClosestVectorInterface;
 import org.mckilliam.lattices.cvp.SphereDecoder;
 import pubsim.VectorFunctions;
 
@@ -19,7 +19,7 @@ public class SampledInVoronoi
         extends AbstractPointEnumerator
         implements PointEnumerator{
 
-    protected NearestPointAlgorithmInterface decoder;
+    protected ClosestVectorInterface decoder;
     protected PointInParallelepiped ppoints;
 
 
@@ -40,7 +40,7 @@ public class SampledInVoronoi
      * @param L is the lattice with included nearest point algorithm.
      * @param samples is the number of samples used per dimension
      */
-    public SampledInVoronoi(LatticeAndNearestPointAlgorithmInterface L, int samples){
+    public SampledInVoronoi(LatticeAndClosestVectorInterface L, int samples){
         ppoints = new PointInParallelepiped(L, samples);
         decoder = L;
     }

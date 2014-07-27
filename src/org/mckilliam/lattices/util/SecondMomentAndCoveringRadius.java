@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  *
@@ -13,7 +13,7 @@ public class SecondMomentAndCoveringRadius extends PropertyCalculator{
     protected final int N;
     protected double sm = 0.0, outradius = 0.0;
 
-    public SecondMomentAndCoveringRadius(LatticeAndNearestPointAlgorithmInterface L){
+    public SecondMomentAndCoveringRadius(LatticeAndClosestVectorInterface L){
         super(L);
         vol = L.volume();
         N = L.getDimension();

@@ -19,7 +19,7 @@ import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
 import org.mckilliam.lattices.Dn;
 import org.mckilliam.lattices.E6;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithm;
+import org.mckilliam.lattices.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import static org.mckilliam.lattices.firstkind.FirstKindCheckSlow.isObtuse;
 
@@ -81,7 +81,7 @@ public class FirstKindCheckTest {
     public void testRandom2DisfirstKind() {
         System.out.println("random 2-dimensional lattice is first kind");
         Matrix B = Matrix.random(2, 2);
-        LatticeAndNearestPointAlgorithm L = new LatticeAndNearestPointAlgorithm(B);
+        LatticeAndClosestVector L = new LatticeAndClosestVector(B);
         //for( Matrix v : L.relevantVectors() ) System.out.println(VectorFunctions.print(v));
         FirstKindCheckSlow f = new FirstKindCheckSlow(L);
         FirstKindCheckSlow ffast = new FirstKindCheckSlow(L);

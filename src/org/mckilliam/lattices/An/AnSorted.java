@@ -4,14 +4,14 @@ import java.util.Arrays;
 import pubsim.IndexedDouble;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.Anstar;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  * Nearest point algorithm for the Lattice An.  This uses the sorting
  * method described by Conway and Sloane.
  * @author Robby McKilliam
  */
-public class AnSorted extends An implements LatticeAndNearestPointAlgorithmInterface{
+public class AnSorted extends An implements LatticeAndClosestVectorInterface{
 
     protected final IndexedDouble[] z;
 

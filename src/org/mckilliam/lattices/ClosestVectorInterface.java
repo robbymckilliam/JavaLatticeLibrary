@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author Robby McKilliam
  */
-public interface NearestPointAlgorithmInterface extends Serializable {
+public interface ClosestVectorInterface extends Serializable {
     
     void nearestPoint(double[] y);
     

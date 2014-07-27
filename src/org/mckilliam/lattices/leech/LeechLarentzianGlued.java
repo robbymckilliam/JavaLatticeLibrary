@@ -7,7 +7,7 @@ package org.mckilliam.lattices.leech;
 
 import Jama.Matrix;
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.Zn;
 
 /**
@@ -15,7 +15,7 @@ import org.mckilliam.lattices.Zn;
  * This doesn't work.
  * @author Robby McKilliam
  */
-public class LeechLarentzianGlued extends Leech implements LatticeAndNearestPointAlgorithmInterface {
+public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVectorInterface {
 
     protected final double[] u = new double[25];
     protected final double[] v = new double[25];

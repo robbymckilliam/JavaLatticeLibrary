@@ -14,8 +14,8 @@ import java.util.Random;
  *      n is the dimension of this lattice.
  * @author Robby McKilliam
  */
-public abstract class NearestPointAlgorithmStandardNumenclature
-    extends AbstractLattice implements LatticeAndNearestPointAlgorithmInterface {
+public abstract class ClosestVectorStandardNumenclature
+    extends AbstractLattice implements LatticeAndClosestVectorInterface {
     
     /** The nearest lattice point */
     protected double[] v;
@@ -26,7 +26,7 @@ public abstract class NearestPointAlgorithmStandardNumenclature
     /** Dimension of the lattice */
     final protected int n;
     
-    public NearestPointAlgorithmStandardNumenclature(int n){
+    public ClosestVectorStandardNumenclature(int n){
         this.n = n;
     }
     
@@ -72,7 +72,7 @@ public abstract class NearestPointAlgorithmStandardNumenclature
         Random rand = new Random();
         double[] y = new double[n];
         
-        LatticeAndNearestPointAlgorithmInterface instance = new AnmBucket(n-1, M);
+        LatticeAndClosestVectorInterface instance = new AnmBucket(n-1, M);
         /*
         double[] y = {0.21, 0.211, 0.2111, 0.21111, 0.211111, 0.21112};
         

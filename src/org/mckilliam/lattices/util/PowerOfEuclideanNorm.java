@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import static pubsim.VectorFunctions.sum2;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  *
@@ -16,7 +16,7 @@ public class PowerOfEuclideanNorm extends PropertyCalculator {
      * @param L lattice to compute a moment from
      * @param m order of the moment, i.e. compute the mth moment
      */
-    public PowerOfEuclideanNorm(LatticeAndNearestPointAlgorithmInterface L, int m){
+    public PowerOfEuclideanNorm(LatticeAndClosestVectorInterface L, int m){
         super(L);
         this.m = m;
     }

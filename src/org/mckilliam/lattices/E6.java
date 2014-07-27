@@ -6,7 +6,7 @@ import Jama.Matrix;
  * The root lattice E6
  * @author Robby McKilliam
  */
-public class E6 extends AbstractLattice implements LatticeAndNearestPointAlgorithmInterface {
+public class E6 extends AbstractLattice implements LatticeAndClosestVectorInterface {
     
         protected static final double[][] dMat
             = { {0,-1,1,0,0,0,0,0},

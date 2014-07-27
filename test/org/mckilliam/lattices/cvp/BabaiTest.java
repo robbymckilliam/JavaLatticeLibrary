@@ -9,7 +9,7 @@ import org.junit.*;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.AnstarSorted;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.Zn;
 import org.mckilliam.lattices.reduction.HKZ;
 import org.mckilliam.lattices.reduction.LLL;
@@ -102,7 +102,7 @@ public class BabaiTest {
         double del = 0.0001;
         for(int t = 0; t < iters; t++){
             int n = r.nextInt(10) + 5;
-            LatticeAndNearestPointAlgorithmInterface lattice = new AnstarSorted(n-1);
+            LatticeAndClosestVectorInterface lattice = new AnstarSorted(n-1);
             Matrix G = lattice.getGeneratorMatrix();
             
             Babai babai = new Babai(lattice);

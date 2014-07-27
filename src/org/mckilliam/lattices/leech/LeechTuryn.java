@@ -2,7 +2,7 @@ package org.mckilliam.lattices.leech;
 
 import static pubsim.VectorFunctions.add;
 import org.mckilliam.lattices.E8;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.ScaledLattice;
 
 /**
@@ -16,7 +16,7 @@ import org.mckilliam.lattices.ScaledLattice;
  * 
  * @author Robby McKilliam
  */
-public class LeechTuryn extends Leech implements LatticeAndNearestPointAlgorithmInterface {
+public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterface {
     
     protected static final double[][] aT
             = { {0,0,0,0,0,0,0,0},

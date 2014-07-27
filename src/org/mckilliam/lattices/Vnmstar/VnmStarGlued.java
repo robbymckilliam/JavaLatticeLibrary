@@ -9,7 +9,7 @@ import Jama.Matrix;
 import static pubsim.Util.*;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.reduction.LLL;
 
@@ -21,7 +21,7 @@ import org.mckilliam.lattices.reduction.LLL;
  * 
  * @author Robby McKilliam
  */
- public class VnmStarGlued extends VnmStar implements LatticeAndNearestPointAlgorithmInterface {
+ public class VnmStarGlued extends VnmStar implements LatticeAndClosestVectorInterface {
 
 
     //generator matrix for the dual of the integer valued polynomials

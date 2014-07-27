@@ -3,8 +3,8 @@ package org.mckilliam.lattices.An;
 import Jama.Matrix;
 import pubsim.Util;
 import org.mckilliam.lattices.AbstractLattice;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
-import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.ClosestVectorInterface;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 
@@ -14,7 +14,7 @@ import org.mckilliam.lattices.util.PointEnumerator;
  * and n is the dimension.
  * @author Robby McKilliam
  */
-public abstract class An extends AbstractLattice implements LatticeAndNearestPointAlgorithmInterface {
+public abstract class An extends AbstractLattice implements LatticeAndClosestVectorInterface {
 
     protected double[] u;
     protected int n;

@@ -8,7 +8,7 @@ package org.mckilliam.lattices.Vn1Star;
 
 import org.mckilliam.lattices.Anstar.AnstarSorted;
 import org.mckilliam.lattices.Anstar.Anstar;
-import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.ClosestVectorInterface;
 import pubsim.*;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
 

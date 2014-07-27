@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import org.mckilliam.distributions.NoiseGenerator;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  * 
@@ -16,7 +16,7 @@ public class ProbabilityOfCodingError {
      * Estimates the probability of the random variable ngen being outside the Voronoi
      * cell of L.
      */
-    public ProbabilityOfCodingError(LatticeAndNearestPointAlgorithmInterface L, NoiseGenerator<Double> ngen, int numerrors){
+    public ProbabilityOfCodingError(LatticeAndClosestVectorInterface L, NoiseGenerator<Double> ngen, int numerrors){
         
         int errorcount = 0;
         long itercount = 0;

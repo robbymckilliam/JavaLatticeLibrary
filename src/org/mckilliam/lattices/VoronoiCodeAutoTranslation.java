@@ -26,7 +26,7 @@ public class VoronoiCodeAutoTranslation
     private final int MAX_ITER = 11;
 
     public VoronoiCodeAutoTranslation(
-            LatticeAndNearestPointAlgorithmInterface lattice, int scale) {
+            LatticeAndClosestVectorInterface lattice, int scale) {
         super(lattice, scale);
         //small translation of a so that Nearest point algorithm
         //wont be ambiguous.  It shouldn't anyway, this is just

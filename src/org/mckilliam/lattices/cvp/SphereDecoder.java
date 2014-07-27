@@ -2,7 +2,7 @@ package org.mckilliam.lattices.cvp;
 
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.ClosestVectorInterface;
 
 /**
  * Sphere decoder that uses the Babai point
@@ -10,7 +10,7 @@ import org.mckilliam.lattices.NearestPointAlgorithmInterface;
  * @author Robby McKilliam
  */
 public class SphereDecoder extends Babai
-        implements NearestPointAlgorithmInterface {
+        implements ClosestVectorInterface {
 
     /** Current sphere radius squared */
     protected double D = Double.POSITIVE_INFINITY;

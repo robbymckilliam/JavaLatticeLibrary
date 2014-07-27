@@ -4,14 +4,14 @@ import org.mckilliam.lattices.Anstar.Anstar;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
-import org.mckilliam.lattices.NearestPointAlgorithmInterface;
+import org.mckilliam.lattices.ClosestVectorInterface;
 
 /**
  * O(N^3log(N)) version of the nearest point algorithm for Vnm*.
  * @author Robby McKilliam
  */
 public class Vn1StarZnLLS extends
-        Vn1Star implements NearestPointAlgorithmInterface {
+        Vn1Star implements ClosestVectorInterface {
 
     final double[] g, glue, z, x;
     final Anstar anstar;

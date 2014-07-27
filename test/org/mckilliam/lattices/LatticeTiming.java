@@ -1,6 +1,6 @@
 package org.mckilliam.lattices;
 
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -33,7 +33,7 @@ public class LatticeTiming {
         int nend = 250;
         int nstep = 16;
 
-        LatticeAndNearestPointAlgorithmInterface lattice = null;
+        LatticeAndClosestVectorInterface lattice = null;
 
         for(int n : range(nstart, nend, nstep) ){
 

@@ -17,7 +17,7 @@ import org.mckilliam.lattices.util.PointEnumerator;
  * for completeness.
  * @author Robby McKilliam
  */
-public class Zn extends AbstractLattice implements LatticeAndNearestPointAlgorithmInterface {
+public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterface {
     
     protected double[] x;
     protected int n;

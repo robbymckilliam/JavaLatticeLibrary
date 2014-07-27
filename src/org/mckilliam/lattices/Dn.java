@@ -10,7 +10,7 @@ import org.mckilliam.lattices.util.PointEnumerator;
  * Nearest point algorithm for the lattice Dn.
  * @author Robby McKilliam
  */
-public class Dn extends AbstractLattice implements LatticeAndNearestPointAlgorithmInterface {
+public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterface {
 
     double[] u,v;
     int n;

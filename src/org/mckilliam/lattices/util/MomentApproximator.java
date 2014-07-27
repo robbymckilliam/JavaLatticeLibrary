@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import static pubsim.VectorFunctions.norm;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 
 /**
  * Approximate moments of the Voronoi cell of a lattice by brute force
@@ -17,7 +17,7 @@ public class MomentApproximator extends PropertyCalculator {
      * @param L lattice to compute a moment from
      * @param m order of the moment, i.e. compute the mth moment
      */
-    public MomentApproximator(LatticeAndNearestPointAlgorithmInterface L, int m){
+    public MomentApproximator(LatticeAndClosestVectorInterface L, int m){
         super(L);
         this.m = m;
     }

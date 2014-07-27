@@ -10,7 +10,7 @@ import Jama.Matrix;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.Anstar;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithmInterface;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.util.PointInParallelepiped;
 
 /**
@@ -19,7 +19,7 @@ import org.mckilliam.lattices.util.PointInParallelepiped;
  * for An* to help speed things up.
  * @author Robby McKilliam
  */
-public class VnmStarSampled extends VnmStar implements LatticeAndNearestPointAlgorithmInterface {
+public class VnmStarSampled extends VnmStar implements LatticeAndClosestVectorInterface {
 
     final private Anstar anstar;
     final private double[] x, u;

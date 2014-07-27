@@ -10,7 +10,7 @@ import static pubsim.VectorFunctions.round;
  * @author Robby McKilliam
  */
 public class Hexagonal 
-        extends NearestPointAlgorithmStandardNumenclature {
+        extends ClosestVectorStandardNumenclature {
 
     private final double sqrt3 = Math.sqrt(3);
     private final Matrix M, Minv;

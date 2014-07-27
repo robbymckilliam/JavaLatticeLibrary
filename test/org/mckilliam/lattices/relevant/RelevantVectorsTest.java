@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.Dn;
 import org.mckilliam.lattices.E8;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithm;
+import org.mckilliam.lattices.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.Zn;
 import org.mckilliam.lattices.util.IntegerVectors;
@@ -128,7 +128,7 @@ public class RelevantVectorsTest {
         System.out.println("test with random lattice");
         int m = 5, n = 3;
         Matrix B = Matrix.random(m, n);
-        PointEnumerator rvs = new RelevantVectors(new LatticeAndNearestPointAlgorithm(B));
+        PointEnumerator rvs = new RelevantVectors(new LatticeAndClosestVector(B));
         while(rvs.hasMoreElements()) {
             Matrix v = rvs.nextElement();
             //we will generate a whole bunch of lattice points and assert that each relevant vector satisies

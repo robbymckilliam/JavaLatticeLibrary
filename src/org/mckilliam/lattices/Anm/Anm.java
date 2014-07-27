@@ -7,13 +7,13 @@ package org.mckilliam.lattices.Anm;
 import Jama.Matrix;
 import org.mckilliam.lattices.An.AnSorted;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.NearestPointAlgorithmStandardNumenclature;
+import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
 
 /**
  * Abstract class for the Coxeter lattice Anm
  * @author Robby McKilliam
  */
-public class Anm extends NearestPointAlgorithmStandardNumenclature{
+public class Anm extends ClosestVectorStandardNumenclature{
 
     protected final int m;
     

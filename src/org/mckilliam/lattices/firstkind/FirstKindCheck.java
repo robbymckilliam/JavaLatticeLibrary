@@ -7,7 +7,7 @@ import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 import pubsim.AllCliquesOfSize;
-import org.mckilliam.lattices.LatticeAndNearestPointAlgorithm;
+import org.mckilliam.lattices.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import static pubsim.VectorFunctions.dot;
 import static org.mckilliam.lattices.firstkind.FirstKindCheckSlow.isSuperbase;
@@ -20,7 +20,7 @@ import static org.mckilliam.lattices.firstkind.FirstKindCheckSlow.isSuperbase;
 public class FirstKindCheck extends FirstKindCheckSlow {
     
     public FirstKindCheck(Matrix B) {
-        this(new LatticeAndNearestPointAlgorithm(B));
+        this(new LatticeAndClosestVector(B));
     }
     
     public FirstKindCheck(LatticeInterface L) {
