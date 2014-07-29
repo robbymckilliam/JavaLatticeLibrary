@@ -8,8 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mckilliam.lattices.An.AnFastSelect;
+import org.mckilliam.lattices.Lattice;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.Zn;
+import pubsim.VectorFunctions;
 
 /**
  *
@@ -34,6 +36,32 @@ public class GreedyRelevantVectorsTest {
     
     @After
     public void tearDown() {
+    }
+    
+    @Test
+    public void sameAsSphereDecoder() {
+        System.out.println("sameAsSphereDecoder");
+
+        int iters = 10;
+        int n = 7;
+        int m = 9;
+        double[] origin = new double[m];
+
+        LatticeInterface lattice = new Lattice(Matrix.random(m, n));
+
+        SphereDecoder sdSE = new SphereDecoderSchnorrEuchner(lattice);
+        GreedyRelevantVectors grv = new GreedyRelevantVectors(lattice);
+
+        for(int t = 0; t < iters; t++){
+            double[] y = VectorFunctions.randomGaussian(m, 0.0, 20.0);
+            //test with default Babai starting point
+            double decdist = VectorFunctions.distance_between2(sdSE.nearestPoint(y), grv.nearestPoint(y));
+            assertTrue(decdist <= 0.000001);
+            //test with origin for starting point
+            decdist = VectorFunctions.distance_between2(sdSE.nearestPoint(y), grv.nearestPoint(y,origin));
+            assertTrue(decdist <= 0.000001);
+        }
+        
     }
 
     /**

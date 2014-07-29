@@ -1,9 +1,11 @@
 package org.mckilliam.lattices.cvp;
 
+import Jama.Matrix;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Set;
 import org.mckilliam.lattices.ClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
-import Jama.Matrix;
-import org.mckilliam.lattices.util.PointEnumerator;
 
 /**
  * A closest point algorithm that works by greedy iterating over relevant vectors.  This
@@ -17,10 +19,16 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
     protected final LatticeInterface L;
     protected final Babai babai; 
     
+    //set contains the relevant vectors
+    protected final Set<Matrix> relevantVectors; 
+    
     /** Compute closest point for lattice L */
     public GreedyRelevantVectors(LatticeInterface L) {
         this.L = L;
         babai = new Babai(L);
+        //store all the relevant vectors, we don't want to recompute them each time nearestPoint is called.
+        relevantVectors = new HashSet<>();
+        for( Matrix v : L.relevantVectors() ) relevantVectors.add(v); 
     }
 
     @Override
@@ -51,11 +59,11 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
     /// Returns the closest relevant vector (including the origin) to ya.
     protected Matrix closestRelevantVector(double[] ya){
         Matrix y = pubsim.VectorFunctions.columnMatrix(ya);
-        PointEnumerator rv = L.relevantVectors();
+        java.util.Iterator<Matrix> rv = relevantVectors.iterator();
         Matrix vmin = new Matrix(ya.length,1,0.0); //origin tests out of loop first
         double D = y.normF();
-        while(rv.hasMoreElements()){
-            Matrix v = rv.nextElement();
+        while(rv.hasNext()){
+            Matrix v = rv.next();
             double Dd = (y.minus(v)).normF();
             if(Dd < D){
                 D = Dd;
