@@ -43,7 +43,7 @@ public class AnFastSelectTest {
     }
 
     /**
-     * Test of nearestPoint method, of class AnFastSelect.
+     * Test of closestPoint method, of class AnFastSelect.
      */
     @Test
     public void nearestPoint() {
@@ -63,8 +63,8 @@ public class AnFastSelectTest {
             for(int k = 0; k < n; k++){
                 y[k] = rand.nextGaussian()*10.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             AnstarVaughan.project(y,x);

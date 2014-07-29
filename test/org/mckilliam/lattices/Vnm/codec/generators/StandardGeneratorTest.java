@@ -40,7 +40,7 @@ public class StandardGeneratorTest {
         int n = 17;
         int m = 3;
         StandardGenerator instance = new StandardGenerator(n, m);
-        Matrix tester = new Vnm(n,m).getGeneratorMatrix();
+        Matrix tester = new Vnm(n,m).generatorMatrix();
         double err = 0.0;
         for(int i = 0; i < n+m+1; i++) for(int j = 0; j < n; j++) err += Math.abs(instance.get(i,j) - tester.get(i,j));
         assertTrue(err < 0.0001);

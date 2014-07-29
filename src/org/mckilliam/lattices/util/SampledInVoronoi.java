@@ -58,7 +58,7 @@ public class SampledInVoronoi
      */
     public double[] nextElementDouble() {
         double[]  p = ppoints.nextElement().getColumnPackedCopy();
-        decoder.nearestPoint(p);
+        decoder.closestPoint(p);
         return  VectorFunctions.subtract(p, decoder.getLatticePoint());
     }
 

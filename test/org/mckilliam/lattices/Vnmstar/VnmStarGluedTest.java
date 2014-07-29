@@ -72,7 +72,7 @@ public class VnmStarGluedTest {
 //    }
 
     /**
-     * Test of nearestPoint method, of class VnmStarGlued.
+     * Test of closestPoint method, of class VnmStarGlued.
      */
     @Test
     public void testNearestPointAnStar() {
@@ -95,8 +95,8 @@ public class VnmStarGluedTest {
             for(int k = 0; k < N; k++){
                 y[k] = ( rand.nextGaussian() - 0.5 )*100.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             Anstar.project(y,x);
@@ -110,7 +110,7 @@ public class VnmStarGluedTest {
     }
 
     /**
-     * Test of nearestPoint method, of class VnmStarGlued.
+     * Test of closestPoint method, of class VnmStarGlued.
      */
     @Test
     public void testNearestPointSphereDecoder() {
@@ -133,8 +133,8 @@ public class VnmStarGluedTest {
             for(int k = 0; k < N; k++){
                 y[k] = ( rand.nextGaussian() - 0.5 )*100.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
 

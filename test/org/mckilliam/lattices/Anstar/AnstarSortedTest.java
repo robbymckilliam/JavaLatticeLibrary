@@ -24,7 +24,7 @@ public class AnstarSortedTest extends TestCase {
     }
 
     /**
-     * Test of nearestPoint method, of class simulator.AnstarOn.
+     * Test of closestPoint method, of class simulator.AnstarOn.
      */
     public void testNearestPoint() {
         System.out.println("nearestPoint");
@@ -42,8 +42,8 @@ public class AnstarSortedTest extends TestCase {
             for(int k = 0; k < n; k++){
                 y[k] = ( rand.nextGaussian() - 0.5 )*10.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             AnstarVaughan.project(y,x);

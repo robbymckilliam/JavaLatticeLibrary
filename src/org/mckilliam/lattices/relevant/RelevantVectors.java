@@ -28,8 +28,8 @@ public class RelevantVectors
     public RelevantVectors(LatticeInterface L){
         this.L = L;
         allcps = new AllClosestPoints(L);
-        B = L.getGeneratorMatrix();
-        int N = L.getDimension();
+        B = L.generatorMatrix();
+        int N = L.dimension();
         intenum = new IntegerVectors(N, 2);
         intenum.nextElement(); //first element is all zeros so discard it.
         setupnext(); 

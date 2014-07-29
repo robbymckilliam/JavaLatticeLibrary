@@ -39,7 +39,7 @@ public class E8Test {
     }
 
      /**
-     * Test of nearestPoint method, of class E8.
+     * Test of closestPoint method, of class E8.
      */
     @Test
     public void testNearestPoint() {
@@ -57,8 +57,8 @@ public class E8Test {
         for(int i = 0; i < iters; i++){
             Double[] yD = siggen.generateReceivedSignal();
             double[] y = pubsim.VectorFunctions.DoubleArrayTodoubleArray(yD);
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             //System.out.println(print(instance.getLatticePoint()));
             //System.out.println(print(tester.getLatticePoint()));
             assertEquals(distance_between(instance.getLatticePoint(), tester.getLatticePoint())<0.0001, true);

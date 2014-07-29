@@ -43,7 +43,7 @@ public class VnmStarSampled extends VnmStar implements LatticeAndClosestVectorIn
 
     
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
 
         PointInParallelepiped points = new PointInParallelepiped(M, samples);
         double D = Double.POSITIVE_INFINITY;
@@ -52,7 +52,7 @@ public class VnmStarSampled extends VnmStar implements LatticeAndClosestVectorIn
             for(int i = 0; i < N; i++){
                 yt[i] = y[i] - p[i];
             }
-            anstar.nearestPoint(yt);
+            anstar.closestPoint(yt);
             project(anstar.getIndex(), yt);
             double d = VectorFunctions.distance_between(yt, y);
             if( d < D ){

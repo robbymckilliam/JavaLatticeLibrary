@@ -56,7 +56,7 @@ public class LatticeProbErrorPlot {
             System.out.println(dround6(S) + " " + d);
         }
 
-        File file = new File( L.getClass().toString().replace(' ', '.') + "_" + L.getDimension() );
+        File file = new File( L.getClass().toString().replace(' ', '.') + "_" + L.dimension() );
         BufferedWriter writer =  new BufferedWriter(new FileWriter(file));
         int count = 0;
         for( double S : range(Sstart, Send, Sstep)){

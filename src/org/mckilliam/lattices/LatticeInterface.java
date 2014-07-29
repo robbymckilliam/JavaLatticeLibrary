@@ -83,13 +83,13 @@ public interface LatticeInterface extends Serializable {
      */
     long kissingNumber();
     
-    int getDimension();
+    int dimension();
     
     /**
      * Return the generator matrix for this lattice
      * @return double[][] containing the generator matrix
      */
-    Matrix getGeneratorMatrix();
+    Matrix generatorMatrix();
     
     /** 
      * @return the Gram matrix of this lattice, i.e., if the generator it B then return B'B. 

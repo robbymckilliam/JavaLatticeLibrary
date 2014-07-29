@@ -35,12 +35,12 @@ public class VnmStar extends AbstractLattice {
     /** {@inheritDoc} */
     @Override
     public double volume(){
-        Matrix M = getGeneratorMatrix();
+        Matrix M = generatorMatrix();
         return Math.sqrt(M.transpose().times(M).det());
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix(){
         return getGeneratorMatrix(m, n);
     }
 
@@ -139,7 +139,7 @@ public class VnmStar extends AbstractLattice {
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
     

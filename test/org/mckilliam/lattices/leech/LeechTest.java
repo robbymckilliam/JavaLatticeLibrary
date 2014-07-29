@@ -48,10 +48,10 @@ public class LeechTest {
     public void testVolume() {
         Leech lattice = new Leech();
 
-        System.out.println(print(lattice.getGeneratorMatrix()));
+        System.out.println(print(lattice.generatorMatrix()));
 
-        assertEquals(lattice.getGeneratorMatrix().det(), 1.0, 0.000000001);
-        assertEquals(lattice.getGeneratorMatrix().det(), lattice.volume(), 0.000000001);
+        assertEquals(lattice.generatorMatrix().det(), 1.0, 0.000000001);
+        assertEquals(lattice.generatorMatrix().det(), lattice.volume(), 0.000000001);
     }
     
      /**
@@ -63,7 +63,7 @@ public class LeechTest {
 
         int N = 24, M = 24;
         
-        Matrix Bs = lattice.getGeneratorMatrix();
+        Matrix Bs = lattice.generatorMatrix();
         Matrix bnp1 = Bs.times(onesColumn(N));  //the extra vector
         
         //fill an extended obtuse superbasis matrix
@@ -77,8 +77,8 @@ public class LeechTest {
         
         System.out.println(print(Q));
 
-        assertEquals(lattice.getGeneratorMatrix().det(), 1.0, 0.000000001);
-        assertEquals(lattice.getGeneratorMatrix().det(), lattice.volume(), 0.000000001);
+        assertEquals(lattice.generatorMatrix().det(), 1.0, 0.000000001);
+        assertEquals(lattice.generatorMatrix().det(), lattice.volume(), 0.000000001);
     }
 
 }

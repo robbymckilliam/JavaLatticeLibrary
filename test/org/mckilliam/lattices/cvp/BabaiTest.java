@@ -48,7 +48,7 @@ public class BabaiTest {
         
         boolean caught = false;
         try{
-            instance.nearestPoint(y);
+            instance.closestPoint(y);
         } catch(RuntimeException e){
             caught = true;
         }
@@ -70,11 +70,11 @@ public class BabaiTest {
         
         Babai babai = new Babai(lattice);
         
-        lattice.nearestPoint(y);
+        lattice.closestPoint(y);
         double[] xtrue = lattice.getLatticePoint();
         double[] utrue = lattice.getIndex();
         
-        babai.nearestPoint(y);
+        babai.closestPoint(y);
         double[] xtest = babai.getLatticePoint();
         double[] utest = babai.getIndex();
         
@@ -103,7 +103,7 @@ public class BabaiTest {
         for(int t = 0; t < iters; t++){
             int n = r.nextInt(10) + 5;
             LatticeAndClosestVectorInterface lattice = new AnstarSorted(n-1);
-            Matrix G = lattice.getGeneratorMatrix();
+            Matrix G = lattice.generatorMatrix();
             
             Babai babai = new Babai(lattice);
             
@@ -119,7 +119,7 @@ public class BabaiTest {
                 xdel[i] = x[i] +  r.nextGaussian()*del;
             }
             
-            babai.nearestPoint(xdel);
+            babai.closestPoint(xdel);
             double dist = VectorFunctions.distance_between(babai.getLatticePoint(), x);
             System.out.println(dist);
             assertEquals(true, dist<0.00001);

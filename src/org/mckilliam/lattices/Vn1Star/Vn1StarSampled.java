@@ -39,7 +39,7 @@ public class Vn1StarSampled extends Vn1Star {
     }
     
     @Override
-    public double[] nearestPoint(double[] y){
+    public double[] closestPoint(double[] y){
         if (n != y.length-2) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         
         project(y, this.y);
@@ -52,7 +52,7 @@ public class Vn1StarSampled extends Vn1Star {
             for(int i=0; i<n+2; i++)
                 g[i] = this.y[i] + (i+1.0-(n+3.0)/2.0)*f;
             
-            anstar.nearestPoint(g);         
+            anstar.closestPoint(g);         
             project(anstar.getLatticePoint(), vt);
             
             double dist = VectorFunctions.distance_between(this.y, vt);

@@ -26,7 +26,7 @@ public class Vn1StarZnLLS extends
         anstar = new AnstarLinear(n+1);
     }
 
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if (n != y.length-2) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
 
         Anstar.project(y, z);
@@ -81,7 +81,7 @@ public class Vn1StarZnLLS extends
         //of the nearest lattice point.
         for(int t = 0; t < n+2; t++)
             x[t]  = z[t] - fhat*g[t];
-        anstar.nearestPoint(x);
+        anstar.closestPoint(x);
 
         project(anstar.getIndex(), v);
         u = anstar.getIndex();

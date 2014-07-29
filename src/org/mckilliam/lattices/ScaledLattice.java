@@ -23,8 +23,8 @@ public class ScaledLattice extends AbstractLattice implements LatticeAndClosestV
     public ScaledLattice(LatticeAndClosestVectorInterface L, double d){
         this.L = L;
         this.d = d;
-        this.B = L.getGeneratorMatrix().times(d);
-        this.n = L.getDimension();
+        this.B = L.generatorMatrix().times(d);
+        this.n = L.dimension();
         this.m = B.getRowDimension();
         yd= new double[m];
         v = new double[m];
@@ -47,20 +47,20 @@ public class ScaledLattice extends AbstractLattice implements LatticeAndClosestV
     }
 
     @Override
-    public int getDimension() {
+    public int dimension(){
         return n;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix(){
         return B;
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if(y.length != m) throw new RuntimeException("vector to compute the nearest point to is the wrong size");
         times(y,1/d,yd);
-        L.nearestPoint(yd);
+        L.closestPoint(yd);
         times(L.getLatticePoint(),d,v);
         return v;
     }

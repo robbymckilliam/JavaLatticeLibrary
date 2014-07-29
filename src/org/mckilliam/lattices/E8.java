@@ -20,7 +20,7 @@ public class E8 extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public final int getDimension() {
+    public final int dimension() {
         return 8;
     }
     
@@ -40,7 +40,7 @@ public class E8 extends AbstractLattice implements LatticeAndClosestVectorInterf
     protected static final Matrix Binv = B.inverse();
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return B;
     }
 
@@ -60,12 +60,12 @@ public class E8 extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if (n != y.length) throw new RuntimeException("vector must have length 8");
         
-        dn1.nearestPoint(y);
+        dn1.closestPoint(y);
         for(int i = 0; i < n; i++) yt[i] = y[i] - 1.0/2.0;
-        dn2.nearestPoint(yt);
+        dn2.closestPoint(yt);
         
         if(dn1.distance() < dn2.distance()){
             dist = dn1.distance();

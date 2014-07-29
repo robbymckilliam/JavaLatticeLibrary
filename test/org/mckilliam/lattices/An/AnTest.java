@@ -44,15 +44,15 @@ public class AnTest {
     }
 
     /**
-     * Test of getGeneratorMatrix method, of class An.
+     * Test of generatorMatrix method, of class An.
      */
     @Test
     public void testGetGeneratorMatrix() {
         System.out.println("getGeneratorMatrix");
-        int n = 8;
+        int n = 4;
         AnSorted instance = new AnSorted(n);
         //instance.setDimension(4);
-        Matrix result = instance.getGeneratorMatrix();
+        Matrix result = instance.generatorMatrix();
         System.out.println(VectorFunctions.print(result));
         System.out.println(VectorFunctions.print(instance.getGeneratorMatrixBig()));
 
@@ -73,21 +73,21 @@ public class AnTest {
     }
     
     
-    /**
-     * Test of second moment method, of class An.
-     */
-    @Test
-    public void testSecondMoment() {
-        System.out.println("test second moment");
-        int n = 8;
-        AnSorted instance = new AnSorted(n);
-        
-        PowerOfEuclideanNorm mcc = new PowerOfEuclideanNorm(instance, 1);
-        mcc.uniformlyDistributed(100000);
-        double momentmc = mcc.moment();
-        
-        assertEquals(momentmc, instance.secondMoment(), 0.1);
-
-    }
+//    /**
+//     * Test of second moment method, of class An.
+//     */
+//    @Test
+//    public void testSecondMoment() {
+//        System.out.println("test second moment");
+//        int n = 4;
+//        AnSorted instance = new AnSorted(n);
+//        
+//        PowerOfEuclideanNorm mcc = new PowerOfEuclideanNorm(instance, 1);
+//        mcc.uniformlyDistributed(100000);
+//        double momentmc = mcc.moment();
+//        
+//        assertEquals(momentmc, instance.secondMoment(), 0.1);
+//
+//    }
     
 }

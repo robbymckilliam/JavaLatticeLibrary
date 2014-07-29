@@ -47,7 +47,7 @@ public class HexagonalTest {
 
 
     /**
-     * Test of nearestPoint method, of class Hexagonal.
+     * Test of closestPoint method, of class Hexagonal.
      */
     @Test
     public void testInsideCoveringRadius() {
@@ -59,7 +59,7 @@ public class HexagonalTest {
         for(int i = 0; i < iters; i++){
 
             double[] x =randomGaussian(2, 0, 100);
-            instance.nearestPoint(x);
+            instance.closestPoint(x);
 
             assertTrue(distance_between(x, instance.getLatticePoint()) <= instance.coveringRadius());
 
@@ -68,7 +68,7 @@ public class HexagonalTest {
     }
 
     /**
-     * Test of nearestPoint method, of class Hexagonal.
+     * Test of closestPoint method, of class Hexagonal.
      */
     @Test
     public void testNearestPoint() {
@@ -76,16 +76,16 @@ public class HexagonalTest {
 
         int iters = 1000;
         Hexagonal instance = new Hexagonal();
-        Matrix M = instance.getGeneratorMatrix();
+        Matrix M = instance.generatorMatrix();
         double[] x = new double[2];
         double[] u = new double[2];
 
         for(int i = 0; i < iters; i++){
             
             round( randomGaussian(2, 0, 1000), u );
-            x = matrixMultVector(instance.getGeneratorMatrix(), u);
+            x = matrixMultVector(instance.generatorMatrix(), u);
             add(x, randomGaussian(2, 0, 0.0001), x);
-            instance.nearestPoint(x);
+            instance.closestPoint(x);
             //round(ret, ret);
 
             assertVectorsEqual(u, instance.getIndex());
@@ -101,11 +101,11 @@ public class HexagonalTest {
     public void testGetIndex() {
         System.out.println("getIndex");
         Hexagonal instance = new Hexagonal();
-        Matrix M = instance.getGeneratorMatrix();
+        Matrix M = instance.generatorMatrix();
         double[] u = new double[2];
         u[0] = 2.0; u[1] = -3.0;
         double[] x = matrixMultVector(M, u);
-        instance.nearestPoint(x);
+        instance.closestPoint(x);
         assertVectorsEqual(u, instance.getIndex());        
     }
 

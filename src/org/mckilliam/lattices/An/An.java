@@ -41,7 +41,7 @@ public abstract class An extends AbstractLattice implements LatticeAndClosestVec
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
 
@@ -49,7 +49,7 @@ public abstract class An extends AbstractLattice implements LatticeAndClosestVec
      * Return the n+1 by n generator matrix for An.
      */
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return getGeneratorMatrixBig().getMatrix(0, n, 0, n-1);
     }
 

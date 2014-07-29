@@ -55,7 +55,7 @@ public class MbestTest {
 
         boolean caught = false;
         try{
-            instance.nearestPoint(y);
+            instance.closestPoint(y);
         } catch(RuntimeException e){
             caught = true;
         }
@@ -79,11 +79,11 @@ public class MbestTest {
 
         Mbest instance = new Mbest(lattice,M);
 
-        lattice.nearestPoint(y);
+        lattice.closestPoint(y);
         double[] xtrue = lattice.getLatticePoint();
         double[] utrue = lattice.getIndex();
 
-        instance.nearestPoint(y);
+        instance.closestPoint(y);
         double[] xtest = instance.getLatticePoint();
         double[] utest = instance.getIndex();
 
@@ -112,7 +112,7 @@ public class MbestTest {
         for(int t = 0; t < iters; t++){
             int n = r.nextInt(100) + 5;
             LatticeAndClosestVectorInterface lattice = new AnstarSorted(n-1);
-            Matrix G = lattice.getGeneratorMatrix();
+            Matrix G = lattice.generatorMatrix();
 
             Mbest instance = new Mbest(lattice,n);
 
@@ -128,7 +128,7 @@ public class MbestTest {
                 xdel[i] = x[i] +  r.nextGaussian()*del;
             }
 
-            instance.nearestPoint(xdel);
+            instance.closestPoint(xdel);
             double dist = VectorFunctions.distance_between(instance.getLatticePoint(), x);
             System.out.println(dist);
             assertEquals(true, dist<0.00001);
@@ -151,7 +151,7 @@ public class MbestTest {
             int n = r.nextInt(100) + 5;
             LatticeInterface lattice
                     = new Lattice(Matrix.random(n, n));
-            Matrix G = lattice.getGeneratorMatrix();
+            Matrix G = lattice.generatorMatrix();
 
             Mbest instance = new Mbest(lattice, n);
             Babai babai = new Babai(lattice);
@@ -165,8 +165,8 @@ public class MbestTest {
             }
             VectorFunctions.matrixMultVector(G, u, xdel);
 
-            instance.nearestPoint(xdel);
-            babai.nearestPoint(xdel);
+            instance.closestPoint(xdel);
+            babai.closestPoint(xdel);
             double instdist = VectorFunctions.distance_between2(instance.getLatticePoint(), xdel);
             double babaidist = VectorFunctions.distance_between2(babai.getLatticePoint(), xdel);
 

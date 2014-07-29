@@ -25,9 +25,9 @@ public abstract class Anm extends ClosestVectorStandardNumenclature{
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         LatticeInterface an = new AnSorted(n);
-        Matrix Mat = an.getGeneratorMatrix();
+        Matrix Mat = an.generatorMatrix();
         double d = ((double) m)/(n+1);
         for(int i = 0; i < n+1; i++){
             Mat.set(i, n-1, -d);

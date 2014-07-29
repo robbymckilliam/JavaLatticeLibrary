@@ -50,7 +50,7 @@ public class ShortVectorSphereDecoded implements ShortVector{
             //Babai point to be rejected.
             D = VectorFunctions.minColumnNorn(R) + DELTA;
 
-            nearestPoint(new double[m]);
+            closestPoint(new double[m]);
         }
 
         public void findShortVector(double d){
@@ -60,12 +60,12 @@ public class ShortVectorSphereDecoded implements ShortVector{
             //Babai point to be rejected.
             D = d + DELTA;
 
-            nearestPoint(new double[m]);
+            closestPoint(new double[m]);
 
         }
 
         @Override
-        public double[] nearestPoint(double[] y) {
+        public double[] closestPoint(double[] y) {
 
             //current element being decoded
             int k = n-1;

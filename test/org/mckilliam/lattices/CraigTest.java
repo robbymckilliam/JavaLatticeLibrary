@@ -44,7 +44,7 @@ public class CraigTest {
 
 
     /**
-     * Test of getGeneratorMatrix method, of class Craig.
+     * Test of generatorMatrix method, of class Craig.
      */
     @Test
     public void testGetGeneratorMatrix() {
@@ -55,10 +55,10 @@ public class CraigTest {
         int r = 3;
         
         Craig instance = new Craig(n, r);
-        Matrix result = instance.getGeneratorMatrix();
+        Matrix result = instance.generatorMatrix();
         System.out.println(VectorFunctions.print(result));
 
-        Matrix gen = instance.getGeneratorMatrix();
+        Matrix gen = instance.generatorMatrix();
         //System.out.println(VectorFunctions.print(gen));
         Matrix gram = gen.transpose().times(gen);
         double expResult = Math.sqrt(gram.det());
@@ -90,7 +90,7 @@ public class CraigTest {
 
         Craig instance = new Craig(n, r);
 
-        Matrix gen = instance.getGeneratorMatrix();
+        Matrix gen = instance.generatorMatrix();
         //System.out.println(VectorFunctions.print(gen));
 
         System.out.println( gen.getRowDimension() + ", " + gen.getColumnDimension());

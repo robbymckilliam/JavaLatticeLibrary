@@ -72,7 +72,7 @@ import org.mckilliam.lattices.reduction.LLL;
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
 
         //project y into hyperplane of the lattice.
         //this modifies the memory sent, so you need to be a little

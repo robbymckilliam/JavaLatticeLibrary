@@ -48,7 +48,7 @@ public class LatticeOfFirstKindTest {
     public void testSuperbasisWithAn() {
         System.out.println("superbasis with An");
         AnFastSelect anlattice = new AnFastSelect(5);
-        LatticeOfFirstKind instance = new LatticeOfFirstKind(anlattice.getGeneratorMatrix());
+        LatticeOfFirstKind instance = new LatticeOfFirstKind(anlattice.generatorMatrix());
         //System.out.println(VectorFunctions.print(instance.superbasis()));
         //System.out.println(VectorFunctions.print(instance.extendedGram()));
     }
@@ -60,7 +60,7 @@ public class LatticeOfFirstKindTest {
     public void testSuperbasisWithAnStar() {
         System.out.println("superbasis with An*");
         Anstar anlattice = new AnstarLinear(5);
-        LatticeOfFirstKind instance = new LatticeOfFirstKind(anlattice.getGeneratorMatrix());
+        LatticeOfFirstKind instance = new LatticeOfFirstKind(anlattice.generatorMatrix());
         //System.out.println(VectorFunctions.print(instance.superbasis()));
         //System.out.println(VectorFunctions.print(instance.extendedGram()));
     }
@@ -72,8 +72,7 @@ public class LatticeOfFirstKindTest {
 //    public void testconstructfromextededGramAn() {
 //        System.out.println("construct from extended Gram matrix with An");
 //        AnFastSelect anlattice = new AnFastSelect(5);
-//        LatticeOfFirstKind extGram = new LatticeOfFirstKind(anlattice.getGeneratorMatrix());
-//        LatticeOfFirstKind instance = LatticeOfFirstKind.constructFromExtendedGram(extGram.extendedGram());
+//        LatticeOfFirstKind extGram = new LatticeOfFirstKind(anlattice.getGengeneratorMatrix/        LatticeOfFirstKind instance = LatticeOfFirstKind.constructFromExtendedGram(extGram.extendedGram());
 //        assertEquals(anlattice.kissingNumber(), instance.kissingNumber());
 //        assertEquals(anlattice.norm(), instance.norm(), 0.00001);
 //        assertEquals(anlattice.volume(), instance.volume(), 0.00001);
@@ -88,8 +87,7 @@ public class LatticeOfFirstKindTest {
 //    public void testconstructfromextededGramAnstar() {
 //        System.out.println("construct from extended Gram matrix with An*");
 //        Anstar anlattice = new AnstarLinear(6);
-//        LatticeOfFirstKind extGram = new LatticeOfFirstKind(anlattice.getGeneratorMatrix());
-//        LatticeOfFirstKind instance = LatticeOfFirstKind.constructFromExtendedGram(extGram.extendedGram());
+//        LatticeOfFirstKind extGram = new LatticeOfFirstKind(anlattice.getGenerageneratorMatrix      LatticeOfFirstKind instance = LatticeOfFirstKind.constructFromExtendedGram(extGram.extendedGram());
 //        assertEquals(anlattice.kissingNumber(), instance.kissingNumber());
 //        assertEquals(anlattice.norm(), instance.norm(), 0.00001);
 //        assertEquals(anlattice.volume(), instance.volume(), 0.00001);
@@ -118,11 +116,9 @@ public class LatticeOfFirstKindTest {
 //        System.out.println("test norm");
 //        for(int n = 2; n <= 24; n++){
 //            LatticeOfFirstKind lattice = LatticeOfFirstKind.randomLatticeOfFirstKind(n, Uniform.constructFromMeanAndRange(-0.5,1));
-//            Lattice blat = new Lattice(lattice.getGeneratorMatrix());
-//            double sdnorm = blat.norm();
+//            Lattice blat = new Lattice(lattice.getGeneratorgeneratorMatrix       double sdnorm = blat.norm();
 //            double mincutnorm = lattice.norm();
-//            //System.out.println(n + ", " + sdnorm + ", " + mincutnorm + ", " + lattice.getGeneratorMatrix().cond());
-//            //System.out.println(VectorFunctions.print(lattice.extendedGram()));
+//            //System.out.println(n + ", " + sdnorm + ", " + mincutnorm + ", " + lattice.getGeneratorMatgeneratorMatrix           //System.out.println(VectorFunctions.print(lattice.extendedGram()));
 //            assertEquals(sdnorm,mincutnorm,0.00001);
 //        }
 //    }

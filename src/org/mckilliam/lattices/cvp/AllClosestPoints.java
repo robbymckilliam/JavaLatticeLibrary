@@ -22,7 +22,7 @@ public class AllClosestPoints {
     protected final LatticeAndClosestVectorInterface L;
     
     public AllClosestPoints(LatticeInterface L) {
-        this(new LatticeAndClosestVector(L.getGeneratorMatrix()));
+        this(new LatticeAndClosestVector(L.generatorMatrix()));
     } 
     
     public AllClosestPoints(LatticeAndClosestVectorInterface L) {
@@ -31,7 +31,7 @@ public class AllClosestPoints {
     }
     
     public Set<Matrix> closestPoints(double[] y) {
-        L.nearestPoint(y);
+        L.closestPoint(y);
         double[] x = L.getLatticePoint();
         double d = VectorFunctions.distance_between(x, y); //distance to the closest point
         return sd.findVectorsCloserThan(d, y);

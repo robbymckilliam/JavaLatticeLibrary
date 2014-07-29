@@ -27,7 +27,7 @@ public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
     
     @Override
-    public final double[] nearestPoint(double[] y){
+    public final double[] closestPoint(double[] y){
         if (n != y.length) throw new RuntimeException("y is the wrong length");
         
         for(int i = 0; i < n; i++)
@@ -52,7 +52,7 @@ public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
 
@@ -62,7 +62,7 @@ public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return Matrix.identity(n, n);
     }
 

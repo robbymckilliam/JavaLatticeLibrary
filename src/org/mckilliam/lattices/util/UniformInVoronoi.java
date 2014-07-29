@@ -32,10 +32,10 @@ public class UniformInVoronoi
      * @param samples is the number of samples used per dimension
      */
     public UniformInVoronoi(LatticeInterface L, int samples){
-        B = L.getGeneratorMatrix();
+        B = L.generatorMatrix();
         decoder = new SphereDecoder(L);
         numsamples = samples;
-        initNoiseVector(L.getDimension());
+        initNoiseVector(L.dimension());
     }
 
     /**
@@ -44,10 +44,10 @@ public class UniformInVoronoi
      * @param samples is the number of samples used per dimension
      */
     public UniformInVoronoi(LatticeAndClosestVectorInterface L, int samples){
-        B = L.getGeneratorMatrix();
+        B = L.generatorMatrix();
         decoder = L;
         numsamples = samples;
-        initNoiseVector(L.getDimension());
+        initNoiseVector(L.dimension());
     }
 
     public boolean hasMoreElements() {
@@ -64,7 +64,7 @@ public class UniformInVoronoi
     public double[] nextElementDouble() {
         count++;
         double[] p = VectorFunctions.matrixMultVector(B, nv.generateReceivedSignal());
-        decoder.nearestPoint(p);
+        decoder.closestPoint(p);
         return  VectorFunctions.subtract(p, decoder.getLatticePoint());
     }
 

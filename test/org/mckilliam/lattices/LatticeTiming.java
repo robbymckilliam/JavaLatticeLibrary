@@ -54,7 +54,7 @@ public class LatticeTiming {
                 for(int k = 0; k < n; k++){
                     y[k] = rand.noise();
                 }
-                lattice.nearestPoint(y);
+                lattice.closestPoint(y);
             }
             timer = new Date();
             long end = timer.getTime();

@@ -41,7 +41,7 @@ public class E6Test {
     public void testVolume() {
         System.out.println("volume");
         E6 instance = new E6();
-        Matrix B = instance.getGeneratorMatrix();
+        Matrix B = instance.generatorMatrix();
         assertEquals(Math.sqrt((B.transpose().times(B)).det()), instance.volume(), 0.00001);
     }
     

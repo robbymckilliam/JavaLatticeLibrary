@@ -48,7 +48,7 @@ public class AnstarAnGlued extends Anstar{
     
     /** Simple nearest point algorithm based on glue vectors */
     @Override
-    public final double[] nearestPoint(double[] y) {
+    public final double[] closestPoint(double[] y) {
         if (n != y.length-1) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         
         double D = Double.POSITIVE_INFINITY;
@@ -60,7 +60,7 @@ public class AnstarAnGlued extends Anstar{
             for(int j = 0; j < n+1; j++)
                 yd[j] = y[j] - g[j];
             
-            an.nearestPoint(yd);          
+            an.closestPoint(yd);          
             
             double d = VectorFunctions.distance_between2(yd, an.getLatticePoint());
             if( d < D ){
@@ -74,7 +74,7 @@ public class AnstarAnGlued extends Anstar{
         for(int j = 0; j < n+1; j++)
             yd[j] = y[j] - g[j];
             
-        an.nearestPoint(yd);
+        an.closestPoint(yd);
         
         for(int j = 0; j < n+1; j++)
             v[j] = an.getLatticePoint()[j] + g[j];

@@ -21,7 +21,7 @@ public class AnstarVaughan extends Anstar {
     }
 
     @Override
-    public final double[] nearestPoint(double[] y) {
+    public final double[] closestPoint(double[] y) {
         if (n != y.length - 1) {
             throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         }

@@ -27,12 +27,12 @@ public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterf
 
     
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if (n != y.length) throw new RuntimeException("y is the wrong length");
         
         VectorFunctions.round(y, u);
@@ -66,7 +66,7 @@ public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterf
 
     @Override
     public double[] getIndex() {
-        if(Binv == null) Binv = getGeneratorMatrix().inverse();
+        if(Binv == null) Binv = generatorMatrix().inverse();
         VectorFunctions.matrixMultVector(Binv, u, v);
         return v;
     }
@@ -77,7 +77,7 @@ public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         Matrix B = new Matrix(n, n);
         B.set(0, 0, -1); B.set(1, 0, -1);
         for(int j = 1; j < n; j++){

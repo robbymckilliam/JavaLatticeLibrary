@@ -21,7 +21,7 @@ public class MinCutShortVector implements ShortVector {
     public MinCutShortVector(LatticeOfFirstKind L){
         final Matrix B = L.superbasis();
         final Matrix Q = L.extendedGram();
-        final int N = L.getDimension();  
+        final int N = L.dimension();  
         
         WeightedGraph<Integer, DefaultWeightedEdge> G =
                 new SimpleWeightedGraph<>(DefaultWeightedEdge.class);

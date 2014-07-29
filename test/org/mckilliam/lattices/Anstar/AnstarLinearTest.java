@@ -43,7 +43,7 @@ public class AnstarLinearTest {
     }
 
     /**
-     * Test of nearestPoint method, of class AnstarSorted.
+     * Test of closestPoint method, of class AnstarSorted.
      */
     @Test
     public void nearestPoint() {
@@ -63,8 +63,8 @@ public class AnstarLinearTest {
             for(int k = 0; k < n; k++){
                 y[k] = rand.nextGaussian()*10.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             AnstarVaughan.project(y,x);

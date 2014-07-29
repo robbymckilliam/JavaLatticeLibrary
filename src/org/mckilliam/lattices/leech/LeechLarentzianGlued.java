@@ -38,7 +38,7 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
     private final Zn zn = new Zn(25);
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if (24 != y.length-1)
 	    throw new ArrayIndexOutOfBoundsException("Input vector needs to " +
                     "be length 25 for Lorentzian version of Leech lattice " +
@@ -54,7 +54,7 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
             for(int j = 0; j < 25; j++)
                 yd[j] = y[j] - i*glue[j];
 
-            zn.nearestPoint(yd);
+            zn.closestPoint(yd);
 
             double d = VectorFunctions.distance_between2(yd, zn.getLatticePoint());
 
@@ -68,7 +68,7 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
         for(int j = 0; j < 25; j++)
             yd[j] = y[j] - besti*glue[j];
 
-        zn.nearestPoint(yd);
+        zn.closestPoint(yd);
 
         for(int j = 0; j < 25; j++)
             v[j] = zn.getLatticePoint()[j] + besti*glue[j];
@@ -88,7 +88,7 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         Matrix I = Matrix.identity(25, 25);
         Matrix p = VectorFunctions.columnMatrix(g);
         Matrix P = p.times(p.transpose()).times(1.0/gmag2);

@@ -62,7 +62,7 @@ public class Babai implements ClosestVectorInterface {
 
     public Babai(LatticeInterface L, LatticeReduction lr) {
         reducer = lr;
-        G = L.getGeneratorMatrix().copy();
+        G = L.generatorMatrix().copy();
         m = G.getRowDimension();
         n = G.getColumnDimension();
         u = new double[n];
@@ -84,7 +84,7 @@ public class Babai implements ClosestVectorInterface {
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if(m != y.length)
             throw new RuntimeException("Point y of length " + y.length + 
                     " and Generator matrix of column length " + m +

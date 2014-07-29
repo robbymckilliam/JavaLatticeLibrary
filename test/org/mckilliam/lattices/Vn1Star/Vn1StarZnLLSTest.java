@@ -33,7 +33,7 @@ public class Vn1StarZnLLSTest extends TestCase {
     }
 
     /**
-     * Test of nearestPoint method, of class simulator.PhinStar2.
+     * Test of closestPoint method, of class simulator.PhinStar2.
      */
     public void testNearestPoint() {
         
@@ -52,8 +52,8 @@ public class Vn1StarZnLLSTest extends TestCase {
         
             Vn1StarZnLLS.project(y,QgQ1y);
             
-            znlls.nearestPoint(QgQ1y);
-            glued.nearestPoint(QgQ1y);
+            znlls.closestPoint(QgQ1y);
+            glued.closestPoint(QgQ1y);
             
             double diff = VectorFunctions.distance_between(znlls.getLatticePoint(), glued.getLatticePoint());
 

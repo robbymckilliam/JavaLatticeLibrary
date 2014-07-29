@@ -27,7 +27,7 @@ public abstract class AbstractLattice implements LatticeInterface {
 
     @Override
     public double logCenterDensity() {
-        return getDimension()*log2(inradius()) - logVolume();
+        return dimension()*log2(inradius()) - logVolume();
     }
 
     @Override
@@ -37,7 +37,7 @@ public abstract class AbstractLattice implements LatticeInterface {
 
     @Override
     public double logPackingDensity() {
-        return logCenterDensity() + log2HyperSphereVolume(getDimension());
+        return logCenterDensity() + log2HyperSphereVolume(dimension());
     }
 
     @Override
@@ -50,7 +50,7 @@ public abstract class AbstractLattice implements LatticeInterface {
      */
     @Override
     public double hermiteParameter(){
-        double logv = 2.0*logVolume()/getDimension(); //using logarithm tests to be more stable
+        double logv = 2.0*logVolume()/dimension(); //using logarithm tests to be more stable
         return norm()/Math.pow(2.0,logv);
     }
     @Override
@@ -69,7 +69,7 @@ public abstract class AbstractLattice implements LatticeInterface {
 
     @Override
     public double volume(){
-        Matrix B = getGeneratorMatrix();
+        Matrix B = generatorMatrix();
         return Math.sqrt((B.transpose().times(B)).det());
     }
 
@@ -116,16 +116,18 @@ public abstract class AbstractLattice implements LatticeInterface {
     @Override
     public Matrix gramMatrix() {
         if(Q==null) { //lazy evaluation of Q (silly Java)
-            Matrix B = getGeneratorMatrix();
+            Matrix B = generatorMatrix();
             Q = B.transpose().times(B);
         } 
         return Q;
     }
     
-     /** @return an enumeration of the relevant vectors for this lattice */
+    /**
+     * @return an enumeration of the relevant vectors for this lattice
+     */
     @Override
     public PointEnumerator relevantVectors() {
-        return new RelevantVectors(new LatticeAndClosestVector(this.getGeneratorMatrix()));
+        return new RelevantVectors(new LatticeAndClosestVector(this.generatorMatrix()));
     }
     
 }

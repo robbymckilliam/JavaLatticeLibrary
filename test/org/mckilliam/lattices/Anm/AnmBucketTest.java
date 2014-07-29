@@ -34,7 +34,7 @@ public class AnmBucketTest extends TestCase {
     }
 
     /**
-     * Test of nearestPoint method, of class AnmBucket.
+     * Test of closestPoint method, of class AnmBucket.
      */
     public void testNearestPoint() {
         System.out.println("nearestPoint");
@@ -53,8 +53,8 @@ public class AnmBucketTest extends TestCase {
         /*
         double[] y = {0.21, 0.211, 0.2111, 0.21111, 0.211111, 0.21112};
         
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             
@@ -71,8 +71,8 @@ public class AnmBucketTest extends TestCase {
             for(int k = 0; k < n; k++){
                 y[k] = rand.nextGaussian()*100.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             AnstarVaughan.project(y,x);

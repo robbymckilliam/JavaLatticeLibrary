@@ -19,26 +19,29 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
     protected final LatticeInterface L;
     protected final Babai babai; 
     
-    //set contains the relevant vectors
+    /// counts the number of iterations performed (for later analysis)
+    protected long numiters = -1;
+    
+    /// contains the relevant vectors
     protected final Set<Matrix> relevantVectors; 
     
     /** Compute closest point for lattice L */
     public GreedyRelevantVectors(LatticeInterface L) {
         this.L = L;
         babai = new Babai(L);
-        //store all the relevant vectors, we don't want to recompute them each time nearestPoint is called.
+        //store all the relevant vectors, we don't want to recompute them each time closestPoint is called.
         relevantVectors = new HashSet<>();
         for( Matrix v : L.relevantVectors() ) relevantVectors.add(v); 
     }
 
     @Override
-    public double[] nearestPoint(double[] y){
-         babai.nearestPoint(y);
+    public double[] closestPoint(double[] y){
+         babai.closestPoint(y);
         double[] x0 = babai.getLatticePoint();
-        return nearestPoint(y,x0);
+        return closestPoint(y,x0);
     }
     
-    public double[] nearestPoint(double[] y, double[] x0) {
+    public double[] closestPoint(double[] y, double[] x0) {
         if(y.length != x0.length) throw new RuntimeException("y and x0 must have the same length.");
         int m = x0.length; //the dimension of the space this lattice lies in
         double[] ymx = new double[m]; //some memory
@@ -46,12 +49,14 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
         System.arraycopy(x0, 0, xk, 0, m); //starting iterate is x0
         double D1 = Double.POSITIVE_INFINITY;
         double D2 = pubsim.VectorFunctions.distance_between(xk, y);
+        numiters = -1;
         while( D2 < D1 ){
             D1 = D2;
             for(int i = 0; i < m; i++) ymx[i] = y[i] - xk[i];
             Matrix v = closestRelevantVector(ymx);
             for(int i = 0; i < m; i++) xk[i] += v.get(i,0);
             D2 = pubsim.VectorFunctions.distance_between(xk, y);
+            numiters++;
         }
         return xk;
     }
@@ -71,6 +76,14 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
             }
         }
         return vmin;
+    }
+    
+    /** 
+     * Returns the number of iterations require before a closest point was found on the last 
+     * call to closestPoint
+     */
+    public long numberOfIterations() {
+        return numiters;
     }
 
     @Override

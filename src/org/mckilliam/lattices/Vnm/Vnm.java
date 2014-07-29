@@ -62,7 +62,7 @@ public class Vnm extends AbstractLattice{
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         
         if( m == -1 ) return Matrix.identity(n, n);
         
@@ -97,7 +97,7 @@ public class Vnm extends AbstractLattice{
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
     

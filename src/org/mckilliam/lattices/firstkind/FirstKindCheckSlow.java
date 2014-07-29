@@ -37,7 +37,7 @@ public class FirstKindCheckSlow {
     
     /** Asserts if the lattice L is of first kind */
     public FirstKindCheckSlow(LatticeInterface L) {
-        n = L.getDimension();
+        n = L.dimension();
         this.L = L;
         isFirstKind = containsObtuseSuperBasis();
     }
@@ -103,7 +103,7 @@ public class FirstKindCheckSlow {
     
         /** Check that a given obtuse basis actually is a basis for the lattice */
     public static boolean isBasis(Set<Matrix> B, LatticeInterface L) {
-        int n = L.getDimension();
+        int n = L.dimension();
         if( B.size() != n+1 ) return false; //wrong number of vectors
         
         //stash superbase vectors into an array
@@ -118,7 +118,7 @@ public class FirstKindCheckSlow {
                 bLattice.set(i,j, b[j].get(i,0) );
         System.out.println(VectorFunctions.print(bLattice));
         
-        Matrix latticeBasis = L.getGeneratorMatrix();
+        Matrix latticeBasis = L.generatorMatrix();
         Matrix U = (bLattice.transpose().times(bLattice)).inverse().times(bLattice.transpose().times(latticeBasis));
         System.out.println(VectorFunctions.print(U));
         System.out.println(U.det());

@@ -47,7 +47,7 @@ public abstract class Vn1Star extends ClosestVectorStandardNumenclature{
     }
     
     @Override
-    public Matrix getGeneratorMatrix() {      
+    public Matrix generatorMatrix() {      
         return getGeneratorMatrix(n);      
     }
 

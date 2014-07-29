@@ -18,12 +18,12 @@ public class Shimada86 extends AbstractLattice{
     }
 
     @Override
-    public final int getDimension() {
+    public final int dimension() {
         return 86;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

@@ -15,12 +15,12 @@ public class KP36 extends AbstractLattice {
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return 36;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     

@@ -47,12 +47,12 @@ public class PointInSphere
      * @param radius The radius of the sphere
      */
     public PointInSphere(LatticeInterface lattice, double radius){
-        double[] center = new double[lattice.getGeneratorMatrix().getRowDimension()];
+        double[] center = new double[lattice.generatorMatrix().getRowDimension()];
         init(lattice, radius, center);
     }
 
     protected void init(LatticeInterface lattice, double radius, double[] center){
-        M = lattice.getGeneratorMatrix();
+        M = lattice.generatorMatrix();
         m = M.getRowDimension();
         n = M.getColumnDimension();
         if(m != center.length)

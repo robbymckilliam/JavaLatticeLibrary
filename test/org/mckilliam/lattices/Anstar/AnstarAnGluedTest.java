@@ -29,7 +29,7 @@ public class AnstarAnGluedTest extends TestCase {
 
     
     /**
-     * Test of nearestPoint method, of class AnstarAnGlued.
+     * Test of closestPoint method, of class AnstarAnGlued.
      */
     public void testNearestPoint() {
         System.out.println("nearestPoint");
@@ -48,8 +48,8 @@ public class AnstarAnGluedTest extends TestCase {
             for(int k = 0; k < n; k++){
                 y[k] = ( rand.nextGaussian() - 0.5 )*10.0;
             }
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             Anstar.project(y,x);

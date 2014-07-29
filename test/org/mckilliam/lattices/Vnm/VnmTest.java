@@ -39,7 +39,7 @@ public class VnmTest {
     public void testLogVolume() {
         System.out.println("logVolume");
         Vnm instance = new Vnm(12, 2);
-        Matrix gen = instance.getGeneratorMatrix();
+        Matrix gen = instance.generatorMatrix();
         Matrix gram = gen.transpose().times(gen);
 
         System.out.println(VectorFunctions.print(gen));
@@ -105,7 +105,7 @@ public class VnmTest {
     public void testProbCodingError() {
         System.out.println("ProbCodingError");
         Vnm instance = new Vnm(12, 1);
-        Matrix gen = instance.getGeneratorMatrix();
+        Matrix gen = instance.generatorMatrix();
         Matrix gram = gen.transpose().times(gen);
         for(double S = 0.1; S < 5; S+=0.1) System.out.println(instance.probCodingError(S));
     }
@@ -138,7 +138,7 @@ public class VnmTest {
         
         Vnm instance = new Vnm(n, a);
 
-        Matrix gen = instance.getGeneratorMatrix();
+        Matrix gen = instance.generatorMatrix();
         //System.out.println(VectorFunctions.print(gen));
         Matrix gram = gen.transpose().times(gen);
         double expResult = Math.sqrt(gram.det());
@@ -159,7 +159,7 @@ public class VnmTest {
         int a = 3;
 
         Vnm instance = new Vnm(n, a);
-        Matrix M = instance.getGeneratorMatrix();
+        Matrix M = instance.generatorMatrix();
         System.out.println(VectorFunctions.print(M));
         System.out.println(VectorFunctions.print(M.transpose().times(M)));
 
@@ -192,7 +192,7 @@ public class VnmTest {
 //        int iters = 100;
 //        Vnm lattice = new Vnm(m,n);
 //        SphereDecoder decoder = new SphereDecoderSchnorrEuchner(lattice);
-//        Matrix G = lattice.getGeneratorMatrix();
+//        Matrix G = lattice.generatorMatrix();
 //        Matrix invG = ((G.transpose().times(G)).inverse()).times(G.transpose());
 //        for(int i = 1; i < iters; i++){
 //            double[] y = VectorFunctions.randomGaussian(n+m+1, 0.0, 1000.0);

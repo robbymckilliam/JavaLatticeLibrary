@@ -29,7 +29,7 @@ public class PointInParallelepiped
      * @param samples is the number of samples used per dimension
      */
     public PointInParallelepiped(LatticeInterface L, int samples){
-        init(L.getGeneratorMatrix(), samples);
+        init(L.generatorMatrix(), samples);
     }
 
     /**
@@ -45,7 +45,7 @@ public class PointInParallelepiped
      * @param samples is the number of samples used per dimension
      */
     public PointInParallelepiped(LatticeInterface L, int[] samples){
-        init(L.getGeneratorMatrix(), samples);
+        init(L.generatorMatrix(), samples);
     }
 
     /**

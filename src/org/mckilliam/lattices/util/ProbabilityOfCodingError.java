@@ -21,12 +21,12 @@ public class ProbabilityOfCodingError {
         int errorcount = 0;
         long itercount = 0;
         
-        int n = L.getGeneratorMatrix().getRowDimension();
+        int n = L.generatorMatrix().getRowDimension();
         nvec = new double[n];
         
         while(errorcount < numerrors){
             for(int i = 0; i < n; i++) nvec[i] = ngen.noise();
-            L.nearestPoint(nvec);
+            L.closestPoint(nvec);
             double[] latticep = L.getLatticePoint();
             if( !isOrigin(latticep) ) errorcount++;
             itercount++;

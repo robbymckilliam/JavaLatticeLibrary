@@ -43,7 +43,7 @@ public class VoronoiCode implements java.io.Serializable{
         this.lattice = lattice;
         a = trans;
         r = scale;
-        B = lattice.getGeneratorMatrix();
+        B = lattice.generatorMatrix();
         M = B.getRowDimension();
         N = B.getColumnDimension();
         invB = B.inverse();
@@ -56,7 +56,7 @@ public class VoronoiCode implements java.io.Serializable{
     protected VoronoiCode(LatticeAndClosestVectorInterface lattice, int scale){
         this.lattice = lattice;
         r = scale;
-        B = lattice.getGeneratorMatrix();
+        B = lattice.generatorMatrix();
         M = B.getRowDimension();
         N = B.getColumnDimension();
         a = new double[B.getRowDimension()];
@@ -74,7 +74,7 @@ public class VoronoiCode implements java.io.Serializable{
         matrixMultVector(B, u, x);
         subtract(x, a, x);
         multiplyInPlace(x, 1.0/r);
-        lattice.nearestPoint(x);
+        lattice.closestPoint(x);
         subtract(x, lattice.getLatticePoint(), x);
         multiplyInPlace(x, (double)r);
         return x;
@@ -87,7 +87,7 @@ public class VoronoiCode implements java.io.Serializable{
      */
     public double[] decode(double[] x){
        add(x, a, c);
-       lattice.nearestPoint(c);
+       lattice.closestPoint(c);
        matrixMultVector(invB, lattice.getLatticePoint(), u);
        round(u, u);
        modInPlace(u, r);

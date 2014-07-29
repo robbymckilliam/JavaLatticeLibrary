@@ -41,13 +41,13 @@ public class AnstarTest {
     }
     
     /**
-     * Test of getGeneratorMatrix method, of class Anstar.
+     * Test of generatorMatrix method, of class Anstar.
      */
     @Test
     public void testGetGeneratorMatrix() {
         System.out.println("getGeneratorMatrix");
         Anstar instance = new AnstarAnGlued(4);
-        Matrix result = instance.getGeneratorMatrix();
+        Matrix result = instance.generatorMatrix();
         System.out.println(VectorFunctions.print(result));
     }
 

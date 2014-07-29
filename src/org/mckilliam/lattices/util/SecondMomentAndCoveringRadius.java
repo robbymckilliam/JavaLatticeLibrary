@@ -16,7 +16,7 @@ public class SecondMomentAndCoveringRadius extends PropertyCalculator{
     public SecondMomentAndCoveringRadius(LatticeAndClosestVectorInterface L){
         super(L);
         vol = L.volume();
-        N = L.getDimension();
+        N = L.dimension();
     }
 
     protected void calculateProperty(double[] p){

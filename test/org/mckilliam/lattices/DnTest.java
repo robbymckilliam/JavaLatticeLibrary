@@ -19,7 +19,7 @@ public class DnTest extends TestCase {
     }            
 
     /**
-     * Test of nearestPoint method, of class Dn.
+     * Test of closestPoint method, of class Dn.
      */
     public void testNearestPoint() {
         System.out.println("nearestPoint");
@@ -36,14 +36,14 @@ public class DnTest extends TestCase {
         for(int i = 0; i < iters; i++){
             Double[] yD = siggen.generateReceivedSignal();
             double[] y = pubsim.VectorFunctions.DoubleArrayTodoubleArray(yD);
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             assertEquals(VectorFunctions.distance_between(instance.getLatticePoint(), tester.getLatticePoint())<0.0001, true);
         }
     }
 
     /**
-     * Test of nearestPoint method, of class Dn.
+     * Test of closestPoint method, of class Dn.
      */
     public void testGeneratorMatrix() {
         System.out.println("testGeneratorMatrix");
@@ -51,7 +51,7 @@ public class DnTest extends TestCase {
         int n = 24;
 
         Dn instance = new Dn(n);
-        Matrix G = instance.getGeneratorMatrix();
+        Matrix G = instance.generatorMatrix();
         System.out.println(VectorFunctions.printForMathematica(G));
 
         System.out.println(G.det());

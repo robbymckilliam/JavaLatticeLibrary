@@ -38,7 +38,7 @@ public class SphereDecoder extends Babai
     }
        
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if(m != y.length)
             throw new RuntimeException("Point y and Generator matrix are of different dimension!");
 

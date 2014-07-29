@@ -14,10 +14,10 @@ import java.io.Serializable;
  */
 public interface ClosestVectorInterface extends Serializable {
     
-    double[] nearestPoint(double[] y);
+    double[] closestPoint(double[] y);
     
     /**
-     * Returns the nearest lattice point computed the last time nearestPoint was run.
+     * Returns the nearest lattice point computed the last time closestPoint was run.
      */
     double[] getLatticePoint();
     
@@ -29,7 +29,7 @@ public interface ClosestVectorInterface extends Serializable {
     
     /**
      * Return the distance between the nearest point computed 
-     * the last time nearestPoint was run.
+ the last time closestPoint was run.
      */
     double distance();
     

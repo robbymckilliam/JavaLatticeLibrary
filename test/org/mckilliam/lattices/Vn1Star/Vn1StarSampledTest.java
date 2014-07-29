@@ -25,7 +25,7 @@ public class Vn1StarSampledTest extends TestCase {
     }
 
     /**
-     * Test of nearestPoint method, of class simulator.Vn1StarSampled.
+     * Test of closestPoint method, of class simulator.Vn1StarSampled.
      */
     public void testNearestPoint() {
         System.out.println("nearestPoint");
@@ -43,8 +43,8 @@ public class Vn1StarSampledTest extends TestCase {
             
             Vn1Star.project(y,y);
             
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             
             double dist = VectorFunctions.distance_between(instance.getLatticePoint(), tester.getLatticePoint());
             

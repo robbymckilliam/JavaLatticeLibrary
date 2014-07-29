@@ -23,12 +23,12 @@ public class Lattice extends AbstractLattice {
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return B;
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return B.rank();
     }
 

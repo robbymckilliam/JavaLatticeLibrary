@@ -49,8 +49,8 @@ public class SphereDecoderSchnorrEuchnerTest {
         for(int t = 0; t < iters; t++){
 
             double[] y = VectorFunctions.randomGaussian(n, 0.0, 100.0);
-            decoder.nearestPoint(y);
-            sdSE.nearestPoint(y);
+            decoder.closestPoint(y);
+            sdSE.closestPoint(y);
 
             double decdist = VectorFunctions.distance_between2(sdSE.getLatticePoint(), decoder.getLatticePoint());
 
@@ -76,7 +76,7 @@ public class SphereDecoderSchnorrEuchnerTest {
 //        for(int t = 0; t < iters; t++){
 //
 //            double[] y = VectorFunctions.randomGaussian(n, 0.0, 100.0);
-//            decoder.nearestPoint(y);
+//            decoder.closestPoint(y);
 //        }
 //        Date end = new Date();
 //        System.out.println( (end.getTime() - start.getTime())/1000.0 );

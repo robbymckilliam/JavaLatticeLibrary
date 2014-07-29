@@ -31,7 +31,7 @@ public class Leech extends AbstractLattice{
     }
 
     @Override
-    public final int getDimension() {
+    public final int dimension() {
         return 24;
     }
 
@@ -66,7 +66,7 @@ public class Leech extends AbstractLattice{
                     = new Matrix(dMat).times(1.0/Math.sqrt(8.0)).transpose();
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return mat;
     }
 

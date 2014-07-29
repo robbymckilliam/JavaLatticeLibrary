@@ -97,7 +97,7 @@ public class SloanesReductionTest {
     @Test
     public void testOnLeechLattice() {
         System.out.println("test on Leech lattice");
-        Matrix M = new Leech().getGeneratorMatrix().times(Math.sqrt(8.0));
+        Matrix M = new Leech().generatorMatrix().times(Math.sqrt(8.0));
         System.out.println(VectorFunctions.print(M));
         Matrix L = SloanesReduction.upperTriangularBasis(M);
         Matrix Lw = SloanesReduction.computeSlonesLw(L, 1);

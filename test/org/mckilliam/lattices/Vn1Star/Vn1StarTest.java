@@ -67,11 +67,11 @@ public class Vn1StarTest {
 //    }
 //
 //    /**
-//     * Test of getGeneratorMatrix method, of class Vn1Star.
+//     * Test of generatorMatrix method, of class Vn1Star.
 //     */
 //    @Test
 //    public void testGetGeneratorMatrix() {
-//        System.out.println("getGeneratorMatrix");
+//        System.out.println("generatorMatrix");
 //        fail("The test case is a prototype.");
 //    }
 

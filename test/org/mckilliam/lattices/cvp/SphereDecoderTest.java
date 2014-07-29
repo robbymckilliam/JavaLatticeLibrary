@@ -52,7 +52,7 @@ public class SphereDecoderTest {
         
         boolean caught = false;
         try{
-            decoder.nearestPoint(y);
+            decoder.closestPoint(y);
         } catch(RuntimeException e){
             caught = true;
         }
@@ -74,11 +74,11 @@ public class SphereDecoderTest {
         
         SphereDecoder decoder = new SphereDecoder(lattice);
         
-        lattice.nearestPoint(y);
+        lattice.closestPoint(y);
         double[] xtrue = lattice.getLatticePoint();
         double[] utrue = lattice.getIndex();
         
-        decoder.nearestPoint(y);
+        decoder.closestPoint(y);
         double[] xtest = decoder.getLatticePoint();
         double[] utest = decoder.getIndex();
         
@@ -112,8 +112,8 @@ public class SphereDecoderTest {
             Babai babai = new Babai(lattice);
             
             double[] y = VectorFunctions.randomGaussian(m, 0.0, 100.0);
-            decoder.nearestPoint(y);
-            babai.nearestPoint(y);
+            decoder.closestPoint(y);
+            babai.closestPoint(y);
             
             double decdist = VectorFunctions.distance_between2(y, decoder.getLatticePoint());
             double babdist = VectorFunctions.distance_between2(y, babai.getLatticePoint());
@@ -145,8 +145,8 @@ public class SphereDecoderTest {
         for(int t = 0; t < iters; t++){
             
             double[] y = VectorFunctions.randomGaussian(n+1, 0.0, 100.0);
-            decoder.nearestPoint(y);
-            anstar.nearestPoint(y);
+            decoder.closestPoint(y);
+            anstar.closestPoint(y);
             
             double decdist = VectorFunctions.distance_between2(anstar.getLatticePoint(), decoder.getLatticePoint());
             
@@ -174,8 +174,8 @@ public class SphereDecoderTest {
         for(int t = 0; t < iters; t++){
             
             double[] y = VectorFunctions.randomGaussian(n+2, 0.0, 100.0);
-            decoder.nearestPoint(y);
-            lattice.nearestPoint(y);
+            decoder.closestPoint(y);
+            lattice.closestPoint(y);
             
             double decdist = VectorFunctions.distance_between2(lattice.getLatticePoint(), decoder.getLatticePoint());
             

@@ -68,7 +68,7 @@ public abstract class Anstar extends ClosestVectorStandardNumenclature {
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         Matrix on = new Matrix(n + 1, n);
         for (int i = 0; i < n + 1; i++) {
             for (int j = 0; j < n; j++) {

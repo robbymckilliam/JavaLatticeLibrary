@@ -44,7 +44,7 @@ public class BarnesWallTest {
         System.out.println("printNominalGain");
         for(int m = 1; m < 9; m++){
             BarnesWall lattice = new BarnesWall(m);
-            System.out.println(lattice.getDimension() + ", " + lattice.nominalCodingGain());
+            System.out.println(lattice.dimension() + ", " + lattice.nominalCodingGain());
         }
     }
     
@@ -52,7 +52,7 @@ public class BarnesWallTest {
     public void testGenerator() {
         for(int m = 1; m < 5; m++){
             BarnesWall lattice = new BarnesWall(m);
-            Matrix B = lattice.getGeneratorMatrix();
+            Matrix B = lattice.generatorMatrix();
             Lattice gl = new Lattice(B);
             //System.out.println(VectorFunctions.print(B));
             //System.out.println(gl.norm() + ", " + lattice.norm());

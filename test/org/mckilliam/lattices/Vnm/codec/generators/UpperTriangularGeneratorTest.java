@@ -83,7 +83,7 @@ public class UpperTriangularGeneratorTest {
         int n = 100;
         int m = 2;
         UpperTriangularGenerator instance = new UpperTriangularGenerator(n, m);
-        Matrix R = new Vnm(n,m).getGeneratorMatrix().qr().getR();
+        Matrix R = new Vnm(n,m).generatorMatrix().qr().getR();
         for(int i = 0; i < n; i++) 
             for(int j = 0; j < n; j++) 
                 assertEquals(Math.abs(instance.get(i,j)),Math.abs(R.get(i,j)), 0.00001);

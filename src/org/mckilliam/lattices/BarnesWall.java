@@ -28,12 +28,12 @@ public class BarnesWall extends AbstractLattice{
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         Complex[][] C = new Complex[2][2];
         C[0][0] = new Complex(1,0); C[0][1] = new Complex(0,0);
         C[1][0] = new Complex(1,0); C[1][1] = new Complex(1,1);

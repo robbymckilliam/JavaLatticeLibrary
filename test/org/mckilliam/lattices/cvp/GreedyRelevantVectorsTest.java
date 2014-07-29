@@ -7,8 +7,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mckilliam.distributions.Uniform;
 import org.mckilliam.lattices.An.AnFastSelect;
+import org.mckilliam.lattices.E8;
 import org.mckilliam.lattices.Lattice;
+import org.mckilliam.lattices.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.Zn;
 import pubsim.VectorFunctions;
@@ -55,10 +58,10 @@ public class GreedyRelevantVectorsTest {
         for(int t = 0; t < iters; t++){
             double[] y = VectorFunctions.randomGaussian(m, 0.0, 20.0);
             //test with default Babai starting point
-            double decdist = VectorFunctions.distance_between2(sdSE.nearestPoint(y), grv.nearestPoint(y));
+            double decdist = VectorFunctions.distance_between2(sdSE.closestPoint(y), grv.closestPoint(y));
             assertTrue(decdist <= 0.000001);
             //test with origin for starting point
-            decdist = VectorFunctions.distance_between2(sdSE.nearestPoint(y), grv.nearestPoint(y,origin));
+            decdist = VectorFunctions.distance_between2(sdSE.closestPoint(y), grv.closestPoint(y,origin));
             assertTrue(decdist <= 0.000001);
         }
         
@@ -109,5 +112,45 @@ public class GreedyRelevantVectorsTest {
         rm = grv.closestRelevantVector(yc);
         assertTrue(em.minus(rm).normF() <= 0.000001);
     }
+    
+    @Test
+    public void iterationStats(){
+        System.out.println("statistics about thenumber of iterations when starting within twice the Voronoi cell");
+        
+        int iters = 10;
+        
+        int n = 8;
+        int m = n; 
+        double[] origin = new double[m];
+        
+        for (int itr = 0; itr < iters; itr++) {
+
+            //Matrix B = new E8().generatorMatrix();
+            //Matrix B = Matrix.random(m, n); //random generator matrix
+            Matrix B = Matrix.identity(m, m); //try with interger lattice
+            LatticeInterface lattice = new Lattice(B); //the lattice of interest
+            LatticeAndClosestVector latticeX2 = new LatticeAndClosestVector(B.times(2.0)); //sublattice with generator mulitplied by 2
+
+            //System.out.println(VectorFunctions.print(B));
+            //System.out.println(VectorFunctions.print(latticeX2.generatorMatrix()));
+
+            Uniform u02 = Uniform.constructFromMinMax(0, 2);
+            Matrix u = new Matrix(m, 1, 0.0);
+            for (int i = 0; i < m; i++) u.set(i, 0, u02.noise());
+            double[] intwicefundppd = B.times(u).getColumnPackedCopy(); //vector uniformly distributed in twice the fundamental parrallelipided
+            //System.out.println(VectorFunctions.print(intwicefundppd));
+            double[] x = latticeX2.closestPoint(intwicefundppd);
+            //System.out.println(VectorFunctions.print(x));
+            double[] y = new double[m];
+            for (int i = 0; i < m; i++) y[i] = intwicefundppd[i] - x[i]; //vector y is uniformly distributed in twice the Voronoi cell.
+            //System.out.println(VectorFunctions.print(y));
+            GreedyRelevantVectors grv = new GreedyRelevantVectors(lattice);
+            grv.closestPoint(y, origin);
+            long numiterations = grv.numberOfIterations();
+            System.out.println(numiterations);
+        }
+        
+    }
+    
     
 }

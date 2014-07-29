@@ -171,7 +171,7 @@ public class LLLTest {
         int n = 3;  
         Anstar anstar = new AnstarSorted(n);
 
-        Matrix B = anstar.getGeneratorMatrix();
+        Matrix B = anstar.generatorMatrix();
         
         System.out.println(VectorFunctions.print(B));
         

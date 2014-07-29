@@ -30,7 +30,7 @@ public class AnmSorted extends Anm{
     
     /** {@inheritDoc} */
     @Override
-    public final double[] nearestPoint(double[] y){
+    public final double[] closestPoint(double[] y){
         if (n != y.length-1) throw new RuntimeException("y is the wrong length");
         
         int gamma = 0;

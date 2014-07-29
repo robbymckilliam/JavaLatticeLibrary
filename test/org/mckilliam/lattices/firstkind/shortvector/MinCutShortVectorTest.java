@@ -41,7 +41,7 @@ public class MinCutShortVectorTest {
     public void testWithAnStar() {
         System.out.println("testWithAnStar");
         int n = 50;
-        LatticeOfFirstKind lattice = new LatticeOfFirstKind(new AnstarSorted(n).getGeneratorMatrix());
+        LatticeOfFirstKind lattice = new LatticeOfFirstKind(new AnstarSorted(n).generatorMatrix());
         MinCutShortVector instance = new MinCutShortVector(lattice);
         ShortVectorSphereDecoded tester = new ShortVectorSphereDecoded(lattice);
         
@@ -62,7 +62,7 @@ public class MinCutShortVectorTest {
     public void testWithAn() {
         System.out.println("testWithAn");
         int n = 50;
-        LatticeOfFirstKind lattice = new LatticeOfFirstKind(new AnSorted(n).getGeneratorMatrix());
+        LatticeOfFirstKind lattice = new LatticeOfFirstKind(new AnSorted(n).generatorMatrix());
         MinCutShortVector instance = new MinCutShortVector(lattice);
         ShortVectorSphereDecoded tester = new ShortVectorSphereDecoded(lattice);
         

@@ -18,12 +18,12 @@ public class P48 extends AbstractLattice{
     }
 
     @Override
-    public final int getDimension() {
+    public final int dimension() {
         return 48;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

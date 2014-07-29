@@ -39,7 +39,7 @@ public class LeechTurynTest {
     }
 
     /**
-     * Test of nearestPoint method, of class LeechTuryn.
+     * Test of closestPoint method, of class LeechTuryn.
      */
     @Test
     public void testConstructor() {

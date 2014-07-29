@@ -26,7 +26,7 @@ public class AnSortedTest extends TestCase {
     }
 
     /**
-     * Test of nearestPoint method, of class AnSorted.
+     * Test of closestPoint method, of class AnSorted.
      */
     public void testNearestPoint() {
         System.out.println("nearestPoint");
@@ -46,7 +46,7 @@ public class AnSortedTest extends TestCase {
         
         for(int i = 0; i < iters; i++){
             Double[] y = siggen.generateReceivedSignal();
-            instance.nearestPoint(pubsim.VectorFunctions.DoubleArrayTodoubleArray(y));
+            instance.closestPoint(pubsim.VectorFunctions.DoubleArrayTodoubleArray(y));
             assertEquals(0.0, VectorFunctions.sum(instance.getLatticePoint()));
         }
         

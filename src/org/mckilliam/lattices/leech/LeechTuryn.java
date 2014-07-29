@@ -81,7 +81,7 @@ public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterfac
                 while(!bool){
                     c++;
                     double[] v = add(add(aT[a],aT[c]), aT[t]);
-                    fE8.nearestPoint(v);
+                    fE8.closestPoint(v);
                     bool = fE8.distance() < 1e-9;
                 }
                 cT[a][t] = c;
@@ -90,7 +90,7 @@ public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterfac
         
         //a little test
        double[] v = add(add(aT[1],aT[2]), aT[cT[1][2]]);
-       fE8.nearestPoint(v);
+       fE8.closestPoint(v);
        assert(fE8.distance() < 1e-9);
        
        //construct aT list of E8 lattices
@@ -106,19 +106,19 @@ public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterfac
     
     protected final double[] y8t = new double[8];
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         
         //compute the 3*256 required E8 points and their distances
         for(int a = 0; a < 16; a++){
             for(int t = 0; t < 16; t++) {
                 for(int k = 0; k < 8; k++) y8t[k] = y[k] - atT[a][t][k];
-                E8list[0][a][t].nearestPoint(y8t);
+                E8list[0][a][t].closestPoint(y8t);
                 
                 for(int k = 0; k < 8; k++) y8t[k] = y[k+8] - atT[a][t][k];
-                E8list[1][a][t].nearestPoint(y8t);
+                E8list[1][a][t].closestPoint(y8t);
                 
                 for(int k = 0; k < 8; k++) y8t[k] = y[k+16] - atT[a][t][k];
-                E8list[2][a][t].nearestPoint(y8t);
+                E8list[2][a][t].closestPoint(y8t);
             }
         }
         

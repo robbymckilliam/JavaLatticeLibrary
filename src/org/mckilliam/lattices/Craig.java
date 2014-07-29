@@ -33,7 +33,7 @@ public class Craig extends AbstractLattice{
     }
 
     @Override
-    public int getDimension() {
+    public int dimension() {
         return n;
     }
 
@@ -72,11 +72,11 @@ public class Craig extends AbstractLattice{
      * This is simple to code though.
      */
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         if(r == 0) return Matrix.identity(n+1, n+1);
 
         Matrix D = (new AnSorted(n)).getGeneratorMatrixBig();
-        Matrix A = (new AnSorted(n)).getGeneratorMatrix();
+        Matrix A = (new AnSorted(n)).generatorMatrix();
         for(int i = 1; i < r; i++){
             A = D.times(A);
         }

@@ -34,12 +34,12 @@ public class Hexagonal
     }
 
     @Override
-    public final int getDimension() {
+    public final int dimension() {
         return 2;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return M;
     }
 
@@ -51,10 +51,10 @@ public class Hexagonal
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         if(y.length != 2)
             throw new ArrayIndexOutOfBoundsException("y must have length 2");
-        nearestPoint(y[0], y[1]);
+        closestPoint(y[0], y[1]);
         return getLatticePoint();
     }
 
@@ -64,7 +64,7 @@ public class Hexagonal
      * @param x
      * @param y
      */
-    protected void nearestPoint(double x, double y){
+    protected void closestPoint(double x, double y){
         double ydivsqrt3 = y/sqrt3;
         double v0 = Math.round(x);
         double v1 = sqrt3*Math.round(ydivsqrt3);

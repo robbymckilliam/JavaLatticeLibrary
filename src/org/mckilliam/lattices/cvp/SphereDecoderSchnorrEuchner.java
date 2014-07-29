@@ -22,12 +22,12 @@ public class SphereDecoderSchnorrEuchner extends SphereDecoder{
      * @param y 
      */     
     @Override
-    public double[] nearestPoint(double[] y) {
-        return nearestPoint(y, Double.POSITIVE_INFINITY);
+    public double[] closestPoint(double[] y) {
+        return closestPoint(y, Double.POSITIVE_INFINITY);
     }
     
     //Allows you to set the initial starting distance for the sphere decoder
-    public double[] nearestPoint(double[] y, double D) {
+    public double[] closestPoint(double[] y, double D) {
         if(m != y.length)
             throw new RuntimeException("Point y and Generator matrix are of different dimension!");
 

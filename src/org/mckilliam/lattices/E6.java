@@ -39,12 +39,12 @@ public class E6 extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
     
     @Override
-    public int getDimension() {
+    public int dimension() {
         return 6;
     }
 
     @Override
-    public Matrix getGeneratorMatrix() {
+    public Matrix generatorMatrix() {
         return B;
     }
 
@@ -54,7 +54,7 @@ public class E6 extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public double[] nearestPoint(double[] y) {
+    public double[] closestPoint(double[] y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

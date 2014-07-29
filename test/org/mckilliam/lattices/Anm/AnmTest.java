@@ -33,14 +33,14 @@ public class AnmTest extends TestCase {
         super.tearDown();
     }
         /**
-     * Test of nearestPoint method, of class Anm.
+     * Test of closestPoint method, of class Anm.
      */
     public void testGeneratorMatrix() {
         System.out.println("testGeneratorMatrix");
         int m = 2;
         int n = 13;
         LatticeAndClosestVectorInterface anm = new AnmSorted(n,m);
-        Matrix Mat = anm.getGeneratorMatrix();
+        Matrix Mat = anm.generatorMatrix();
         System.out.println(VectorFunctions.print(Mat));
 
         double det = Mat.transpose().times(Mat).det();
@@ -52,8 +52,8 @@ public class AnmTest extends TestCase {
         LatticeAndClosestVector sd
                 = new LatticeAndClosestVector(Mat);
 
-        sd.nearestPoint(r);
-        anm.nearestPoint(r);
+        sd.closestPoint(r);
+        anm.closestPoint(r);
 
         VectorFunctionsTest.assertVectorsEqual(sd.getLatticePoint(), anm.getLatticePoint());
         

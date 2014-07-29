@@ -53,7 +53,7 @@ public abstract class ClosestVectorStandardNumenclature
      * be the dimension of your lattice.
      */
     @Override
-    public int getDimension(){ return n; }
+    public int dimension(){ return n; }
     
     
     
@@ -76,8 +76,8 @@ public abstract class ClosestVectorStandardNumenclature
         /*
         double[] y = {0.21, 0.211, 0.2111, 0.21111, 0.211111, 0.21112};
         
-            instance.nearestPoint(y);
-            tester.nearestPoint(y);
+            instance.closestPoint(y);
+            tester.closestPoint(y);
             v_instance = instance.getLatticePoint();
             v_tester = tester.getLatticePoint();
             
@@ -97,7 +97,7 @@ public abstract class ClosestVectorStandardNumenclature
             for(int k = 0; k < n; k++){
                 y[k] = rand.nextGaussian()*100.0;
             }
-            instance.nearestPoint(y);
+            instance.closestPoint(y);
         }
         timer = new Date();
         long end = timer.getTime();

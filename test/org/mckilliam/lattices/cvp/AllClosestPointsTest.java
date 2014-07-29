@@ -54,7 +54,7 @@ public class AllClosestPointsTest {
         double[] y1 = {1.1,0.1};
         Set<Matrix> allcps = new AllClosestPoints(L).closestPoints(y1);
         assertTrue(allcps.size()==1);
-        L.nearestPoint(y1);
+        L.closestPoint(y1);
         assertTrue( columnMatrix(L.getLatticePoint()).minus(allcps.iterator().next()).normInf() < 1e-9);
         
         double[] y2 = {1.5,0.1};
@@ -84,7 +84,7 @@ public class AllClosestPointsTest {
         Set<Matrix> allcps = new AllClosestPoints(L).closestPoints(y1);
         //System.out.println(allcps.size());
         assertTrue(allcps.size()==1);
-        L.nearestPoint(y1);
+        L.closestPoint(y1);
         assertTrue( columnMatrix(L.getLatticePoint()).minus(allcps.iterator().next()).normInf() < 1e-9);
         
         double[] y2 = {0.5,-0.5,0.0};

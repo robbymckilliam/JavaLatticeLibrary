@@ -41,7 +41,7 @@ public class Vn1StarGlued extends Vn1Star {
      * for odd n.
      */
     @Override
-    public double[] nearestPoint(double[] y){
+    public double[] closestPoint(double[] y){
         if (n != y.length-2) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         
         project(y, this.y);
@@ -61,8 +61,8 @@ public class Vn1StarGlued extends Vn1Star {
             for (int j = 0; j < n+2; j++)
                 yt[j] = this.y[j] - i*g[j];
             
-            //solve the nearestPoint algorithm in An* for this glue
-            anstar.nearestPoint(yt);
+            //solve the closestPoint algorithm in An* for this glue
+            anstar.closestPoint(yt);
             vt = anstar.getLatticePoint();
             ut = anstar.getIndex();
             
