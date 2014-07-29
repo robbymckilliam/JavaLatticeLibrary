@@ -41,7 +41,7 @@ public class Vn1StarGlued extends Vn1Star {
      * for odd n.
      */
     @Override
-    public void nearestPoint(double[] y){
+    public double[] nearestPoint(double[] y){
         if (n != y.length-2) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         
         project(y, this.y);
@@ -80,6 +80,8 @@ public class Vn1StarGlued extends Vn1Star {
                 
             }
         }
+        
+        return v;
     }
     
 }

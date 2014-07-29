@@ -99,15 +99,6 @@ public abstract class An extends AbstractLattice implements LatticeAndClosestVec
         return Math.sqrt(n+1.0)*n*(n+3)/12.0/(n+1);
     }
     
-    private double[] yDoubletoy;
-    @Override
-    public final void nearestPoint(Double[] y) {
-        if(yDoubletoy == null || yDoubletoy.length != y.length) 
-            yDoubletoy = new double[y.length];
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
-    }
-    
     @Override
     public double distance() {
         throw new UnsupportedOperationException("Not supported yet.");

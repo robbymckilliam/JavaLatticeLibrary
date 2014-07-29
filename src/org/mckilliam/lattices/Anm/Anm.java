@@ -13,7 +13,7 @@ import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
  * Abstract class for the Coxeter lattice Anm
  * @author Robby McKilliam
  */
-public class Anm extends ClosestVectorStandardNumenclature{
+public abstract class Anm extends ClosestVectorStandardNumenclature{
 
     protected final int m;
     
@@ -22,11 +22,6 @@ public class Anm extends ClosestVectorStandardNumenclature{
         this.m = m;
         u = new double[n+1];
         v = new double[n+1];
-    }
-
-    @Override
-    public void nearestPoint(double[] y) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override

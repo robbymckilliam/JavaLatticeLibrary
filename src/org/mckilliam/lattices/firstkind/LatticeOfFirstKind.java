@@ -151,12 +151,7 @@ public class LatticeOfFirstKind extends Lattice implements LatticeAndClosestVect
 //    }
 
     @Override
-    public void nearestPoint(double[] y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void nearestPoint(Double[] y) {
+    public double[] nearestPoint(double[] y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

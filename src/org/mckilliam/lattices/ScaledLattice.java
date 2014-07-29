@@ -57,11 +57,12 @@ public class ScaledLattice extends AbstractLattice implements LatticeAndClosestV
     }
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if(y.length != m) throw new RuntimeException("vector to compute the nearest point to is the wrong size");
         times(y,1/d,yd);
         L.nearestPoint(yd);
         times(L.getLatticePoint(),d,v);
+        return v;
     }
 
     @Override
@@ -79,15 +80,6 @@ public class ScaledLattice extends AbstractLattice implements LatticeAndClosestV
         return d*L.distance();
     }
     
-    private double[] yDoubletoy;
-    @Override
-    public void nearestPoint(Double[] y) {
-        if(yDoubletoy == null || yDoubletoy.length != y.length)
-            yDoubletoy = new double[y.length];
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
-    }
-
     @Override
     public String name() { 
         return L.name();

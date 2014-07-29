@@ -68,7 +68,7 @@ public class Mbest extends Babai {
     }
             
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if(m != y.length)
             throw new RuntimeException("Point y and Generator matrix are of different dimension!");
 
@@ -191,7 +191,7 @@ public class Mbest extends Babai {
 
             }
         }
-
+        return getLatticePoint();
     }
 
     /**

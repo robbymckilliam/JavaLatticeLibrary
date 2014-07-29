@@ -14,9 +14,7 @@ import java.io.Serializable;
  */
 public interface ClosestVectorInterface extends Serializable {
     
-    void nearestPoint(double[] y);
-    
-    void nearestPoint(Double[] y);
+    double[] nearestPoint(double[] y);
     
     /**
      * Returns the nearest lattice point computed the last time nearestPoint was run.

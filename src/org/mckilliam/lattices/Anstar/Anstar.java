@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mckilliam.lattices.Anstar;
 
 import Jama.Matrix;
@@ -12,7 +8,7 @@ import org.mckilliam.lattices.util.PointEnumerator;
 
 /**
  * Abstract class for any Anstar algorithm
- * @author robertm
+ * @author Robby McKilliam
  */
 public abstract class Anstar extends ClosestVectorStandardNumenclature {
     

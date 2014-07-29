@@ -65,7 +65,7 @@ public class ShortVectorSphereDecoded implements ShortVector{
         }
 
         @Override
-        public void nearestPoint(double[] y) {
+        public double[] nearestPoint(double[] y) {
 
             //current element being decoded
             int k = n-1;
@@ -77,6 +77,8 @@ public class ShortVectorSphereDecoded implements ShortVector{
 
             //compute nearest point
             VectorFunctions.matrixMultVector(G, u, x);
+            
+            return getLatticePoint();
 
         }
 

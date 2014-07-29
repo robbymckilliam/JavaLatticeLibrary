@@ -7,7 +7,6 @@
 package org.mckilliam.lattices;
 
 import Jama.Matrix;
-import java.util.Iterator;
 import org.mckilliam.lattices.util.AbstractPointEnumerator;
 import org.mckilliam.lattices.util.PointEnumerator;
 
@@ -28,11 +27,13 @@ public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
     
     @Override
-    public final void nearestPoint(double[] y){
+    public final double[] nearestPoint(double[] y){
         if (n != y.length) throw new RuntimeException("y is the wrong length");
         
         for(int i = 0; i < n; i++)
             x[i] = Math.round(y[i]);
+        
+        return x;
     }
     
     @Override
@@ -73,15 +74,6 @@ public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterf
     @Override
     public double distance() {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    private double[] yDoubletoy;
-    @Override
-    public void nearestPoint(Double[] y) {
-        if(yDoubletoy == null || yDoubletoy.length != y.length)
-            yDoubletoy = new double[y.length];
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
     }
     
     @Override

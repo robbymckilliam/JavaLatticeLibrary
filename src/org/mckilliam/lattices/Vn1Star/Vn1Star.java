@@ -21,16 +21,6 @@ public abstract class Vn1Star extends ClosestVectorStandardNumenclature{
         v = new double[n+2];
     }
     
-    
-    private double[] yDoubletoy;
-    @Override
-    public void nearestPoint(Double[] y) {
-        if(yDoubletoy == null || yDoubletoy.length != y.length)
-            yDoubletoy = new double[y.length];
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(y);
-    }
-    
     /**Getter for the nearest point. */
     @Override
     public double[] getLatticePoint(){ return v; }

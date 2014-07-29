@@ -60,7 +60,7 @@ public class E8 extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if (n != y.length) throw new RuntimeException("vector must have length 8");
         
         dn1.nearestPoint(y);
@@ -75,7 +75,7 @@ public class E8 extends AbstractLattice implements LatticeAndClosestVectorInterf
             dist = dn2.distance();
             for(int i = 0; i < n; i++) v[i] = dn2.getLatticePoint()[i] + 1.0/2.0;
         }
-
+        return v;
     }
 
     @Override
@@ -95,13 +95,6 @@ public class E8 extends AbstractLattice implements LatticeAndClosestVectorInterf
     @Override
     public double distance() {
         return dist;
-    }
-    
-    private double[] yDoubletoy = new double[8];
-    @Override
-    public void nearestPoint(Double[] y) {
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i]; 
-        this.nearestPoint(yDoubletoy);
     }
     
     @Override

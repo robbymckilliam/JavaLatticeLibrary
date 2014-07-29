@@ -46,7 +46,7 @@ public class AnSortedTest extends TestCase {
         
         for(int i = 0; i < iters; i++){
             Double[] y = siggen.generateReceivedSignal();
-            instance.nearestPoint(y);
+            instance.nearestPoint(pubsim.VectorFunctions.DoubleArrayTodoubleArray(y));
             assertEquals(0.0, VectorFunctions.sum(instance.getLatticePoint()));
         }
         

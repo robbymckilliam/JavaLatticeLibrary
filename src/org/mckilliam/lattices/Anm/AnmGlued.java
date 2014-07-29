@@ -49,7 +49,7 @@ public class AnmGlued extends Anm {
     }
 
     @Override
-    public final void nearestPoint(double[] y) {
+    public final double[] nearestPoint(double[] y) {
         if (n != y.length-1) throw new RuntimeException("y is the wrong length");
         
         double D = Double.POSITIVE_INFINITY;
@@ -83,6 +83,8 @@ public class AnmGlued extends Anm {
         
         for(int j = 0; j < n+1; j++)
             v[j] = an.getLatticePoint()[j] + g[j];
+        
+        return v;
     }
     
     

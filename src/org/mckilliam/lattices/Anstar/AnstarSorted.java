@@ -27,7 +27,7 @@ public class AnstarSorted extends Anstar{
     }
     
     @Override
-    public final void nearestPoint(double[] y){
+    public final double[] nearestPoint(double[] y){
         if (n != y.length-1) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         
         double a = 0, b = 0;
@@ -59,6 +59,8 @@ public class AnstarSorted extends Anstar{
             u[z[n-i].index] += 1;
         
         project(u, v);
+        
+        return v;
            
     }
     

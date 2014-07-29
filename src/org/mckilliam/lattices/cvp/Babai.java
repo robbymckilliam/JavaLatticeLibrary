@@ -84,12 +84,13 @@ public class Babai implements ClosestVectorInterface {
     }
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if(m != y.length)
             throw new RuntimeException("Point y of length " + y.length + 
                     " and Generator matrix of column length " + m +
                     " are of different dimension!");
         computeBabaiPoint(y);        
+        return getLatticePoint();
     }
 
     @Override
@@ -126,15 +127,6 @@ public class Babai implements ClosestVectorInterface {
     @Override
     public double distance() {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    private double[] yDoubletoy;
-    @Override
-    public void nearestPoint(Double[] y) {
-        if(yDoubletoy == null || yDoubletoy.length != y.length)
-            yDoubletoy = new double[y.length];
-            for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
     }
 
 }

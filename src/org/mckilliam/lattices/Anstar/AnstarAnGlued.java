@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.mckilliam.lattices.Anstar;
 
 import pubsim.VectorFunctions;
@@ -53,7 +48,7 @@ public class AnstarAnGlued extends Anstar{
     
     /** Simple nearest point algorithm based on glue vectors */
     @Override
-    public final void nearestPoint(double[] y) {
+    public final double[] nearestPoint(double[] y) {
         if (n != y.length-1) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
         
         double D = Double.POSITIVE_INFINITY;
@@ -83,6 +78,8 @@ public class AnstarAnGlued extends Anstar{
         
         for(int j = 0; j < n+1; j++)
             v[j] = an.getLatticePoint()[j] + g[j];
+        
+        return v;
         
     }
     

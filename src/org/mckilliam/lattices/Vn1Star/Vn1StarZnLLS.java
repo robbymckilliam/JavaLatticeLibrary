@@ -26,7 +26,7 @@ public class Vn1StarZnLLS extends
         anstar = new AnstarLinear(n+1);
     }
 
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if (n != y.length-2) throw new ArrayIndexOutOfBoundsException("y is the wrong length");
 
         Anstar.project(y, z);
@@ -85,6 +85,8 @@ public class Vn1StarZnLLS extends
 
         project(anstar.getIndex(), v);
         u = anstar.getIndex();
+        
+        return v;
         
     }
 

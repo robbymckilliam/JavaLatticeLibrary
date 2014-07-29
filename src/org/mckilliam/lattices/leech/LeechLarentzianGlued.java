@@ -38,7 +38,7 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
     private final Zn zn = new Zn(25);
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if (24 != y.length-1)
 	    throw new ArrayIndexOutOfBoundsException("Input vector needs to " +
                     "be length 25 for Lorentzian version of Leech lattice " +
@@ -72,6 +72,8 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
 
         for(int j = 0; j < 25; j++)
             v[j] = zn.getLatticePoint()[j] + besti*glue[j];
+        
+        return v;
 
     }
 
@@ -96,13 +98,6 @@ public class LeechLarentzianGlued extends Leech implements LatticeAndClosestVect
     @Override
     public double distance() {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    private double[] yDoubletoy = new double[24];
-    @Override
-    public void nearestPoint(Double[] y) {
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
     }
 
 }

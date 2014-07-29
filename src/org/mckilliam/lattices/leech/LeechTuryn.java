@@ -106,7 +106,7 @@ public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterfac
     
     protected final double[] y8t = new double[8];
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         
         //compute the 3*256 required E8 points and their distances
         for(int a = 0; a < 16; a++){
@@ -131,6 +131,9 @@ public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterfac
                 
                 }
         D = bestdist;
+        
+        //UNFINISHED!
+        return getLatticePoint();
     }
     
     protected double D = Double.POSITIVE_INFINITY;
@@ -149,11 +152,4 @@ public class LeechTuryn extends Leech implements LatticeAndClosestVectorInterfac
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private double[] yDoubletoy = new double[24];
-    @Override
-    public void nearestPoint(Double[] y) {
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
-    }
-
 }

@@ -34,13 +34,9 @@ public class LatticeAndClosestVector extends Lattice implements LatticeAndCloses
     }
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         decoder.nearestPoint(y);
-    }
-    
-    @Override
-    public void nearestPoint(Double[] y) {
-        decoder.nearestPoint(y);
+        return decoder.getLatticePoint();
     }
 
     @Override

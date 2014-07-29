@@ -51,10 +51,11 @@ public class Hexagonal
     }
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if(y.length != 2)
             throw new ArrayIndexOutOfBoundsException("y must have length 2");
         nearestPoint(y[0], y[1]);
+        return getLatticePoint();
     }
 
     /**
@@ -63,7 +64,7 @@ public class Hexagonal
      * @param x
      * @param y
      */
-    public void nearestPoint(double x, double y){
+    protected void nearestPoint(double x, double y){
         double ydivsqrt3 = y/sqrt3;
         double v0 = Math.round(x);
         double v1 = sqrt3*Math.round(ydivsqrt3);

@@ -53,7 +53,7 @@ public class AnmBucket extends Anm {
     
     /** {@inheritDoc} */
     @Override
-    public final void nearestPoint(double[] y){
+    public final double[] nearestPoint(double[] y){
         if (n != y.length-1) throw new RuntimeException("y is the wrong length");
         
         //make sure that the buckets are empty!
@@ -196,6 +196,8 @@ public class AnmBucket extends Anm {
 
         //project index to nearest lattice point
         AnstarVaughan.project(u, v);
+        
+        return v;
         
     }
     

@@ -22,17 +22,30 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
         this.L = L;
         babai = new Babai(L);
     }
-    
+
     @Override
-    public void nearestPoint(double[] y) {
-        babai.computeBabaiPoint(y);
-        babai.nearestPoint(y);
-        double[] xk = babai.getLatticePoint();
+    public double[] nearestPoint(double[] y){
+         babai.nearestPoint(y);
+        double[] x0 = babai.getLatticePoint();
+        return nearestPoint(y,x0);
+    }
+    
+    public double[] nearestPoint(double[] y, double[] x0) {
+        if(y.length != x0.length) throw new RuntimeException("y and x0 must have the same length.");
+        int m = x0.length; //the dimension of the space this lattice lies in
+        double[] ymx = new double[m]; //some memory
+        double[] xk = new double[m]; //stores current iterate
+        System.arraycopy(x0, 0, xk, 0, m); //starting iterate is x0
         double D1 = Double.POSITIVE_INFINITY;
         double D2 = pubsim.VectorFunctions.distance_between(xk, y);
-        //while( D2 < D1 ){
-        //    
-        //}
+        while( D2 < D1 ){
+            D1 = D2;
+            for(int i = 0; i < m; i++) ymx[i] = y[i] - xk[i];
+            Matrix v = closestRelevantVector(ymx);
+            for(int i = 0; i < m; i++) xk[i] += v.get(i,0);
+            D2 = pubsim.VectorFunctions.distance_between(xk, y);
+        }
+        return xk;
     }
     
     /// Returns the closest relevant vector (including the origin) to ya.
@@ -50,11 +63,6 @@ public class GreedyRelevantVectors implements ClosestVectorInterface {
             }
         }
         return vmin;
-    }
-
-    @Override
-    public void nearestPoint(Double[] y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

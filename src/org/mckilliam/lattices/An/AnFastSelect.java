@@ -25,7 +25,7 @@ public class AnFastSelect extends An implements LatticeAndClosestVectorInterface
     }
 
     @Override
-    public final void nearestPoint(double[] y) {
+    public final double[] nearestPoint(double[] y) {
         if (n != y.length-1) throw new RuntimeException("y is the wrong length");
         
         Anstar.project(y, y);
@@ -43,6 +43,7 @@ public class AnFastSelect extends An implements LatticeAndClosestVectorInterface
         for(int i = 0; i < Math.abs(m); i++)
             u[z[i].index] -= Math.signum(m);
         
+        return u;
     }
 
 }

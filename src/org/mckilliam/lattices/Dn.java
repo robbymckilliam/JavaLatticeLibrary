@@ -32,7 +32,7 @@ public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterf
     }
 
     @Override
-    public void nearestPoint(double[] y) {
+    public double[] nearestPoint(double[] y) {
         if (n != y.length) throw new RuntimeException("y is the wrong length");
         
         VectorFunctions.round(y, u);
@@ -51,7 +51,7 @@ public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterf
         }
         
         dist = VectorFunctions.distance_between(u, y);
-        
+        return u;
     }
     
     @Override
@@ -89,15 +89,6 @@ public class Dn extends AbstractLattice implements LatticeAndClosestVectorInterf
     @Override
     public double coveringRadius() {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    private double[] yDoubletoy;
-    @Override
-    public void nearestPoint(Double[] y) {
-        if(yDoubletoy == null || yDoubletoy.length != y.length)
-            yDoubletoy = new double[y.length];
-        for(int i = 0; i < y.length; i++) yDoubletoy[i] = y[i];
-        this.nearestPoint(yDoubletoy);
     }
     
     @Override
