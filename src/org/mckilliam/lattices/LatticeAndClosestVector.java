@@ -15,21 +15,23 @@ public class LatticeAndClosestVector extends Lattice implements LatticeAndCloses
 
     private final ClosestVectorInterface decoder;
 
-    public LatticeAndClosestVector(Matrix B){
-        super(B);
-        decoder = new SphereDecoderSchnorrEuchner(this);
-        //decoder = new SphereDecoder(this);
-    }
-
-    public LatticeAndClosestVector(double[][] B){
-        super(new Matrix(B));
-        decoder = new SphereDecoderSchnorrEuchner(this);
-        //decoder = new SphereDecoder(this);
-    }
-
-     public LatticeAndClosestVector(Matrix B, ClosestVectorInterface np){
-        super(B);
+    public LatticeAndClosestVector(Matrix B, String name, ClosestVectorInterface np){
+        super(B, name);
         decoder = np;
+    }
+    
+    public LatticeAndClosestVector(Matrix B, ClosestVectorInterface np){
+        super(B, "SomeLattice");
+        decoder = np;
+    }
+    
+    public LatticeAndClosestVector(Matrix B, String name){
+        super(B, name);
+        decoder = new SphereDecoderSchnorrEuchner(this);
+    }
+    
+    public LatticeAndClosestVector(Matrix B){
+         this(B,"SomeLattice");
     }
 
     @Override

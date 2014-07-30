@@ -22,10 +22,6 @@ public class Lattice extends AbstractLattice {
     public Lattice(Matrix B){
         this(B, "SomeLattice");
     }
-    
-    public Lattice(double[][] B){
-        this(new Matrix(B));
-    }
 
     @Override
     public Matrix generatorMatrix() {
