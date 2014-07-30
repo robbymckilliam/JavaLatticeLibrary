@@ -2,7 +2,6 @@ package org.mckilliam.lattices.Anstar;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
-import org.mckilliam.lattices.KissingNumber;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 
@@ -129,7 +128,7 @@ public abstract class Anstar extends ClosestVectorStandardNumenclature {
     
     @Override
     public String name() {
-        return "An" + n + "star";
+        return "A" + n + "star";
     }
     
     /** @return an enumeration of the relevant vectors for this lattice */

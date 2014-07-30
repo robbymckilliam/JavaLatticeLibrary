@@ -106,7 +106,7 @@ public abstract class An extends AbstractLattice implements LatticeAndClosestVec
     
     @Override
     public String name() {
-        return "An" + n;
+        return "A" + n;
     }
     
     /** @return an enumeration of the relevant vectors for this lattice */

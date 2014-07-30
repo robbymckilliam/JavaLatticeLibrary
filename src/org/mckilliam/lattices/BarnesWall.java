@@ -71,7 +71,7 @@ public class BarnesWall extends AbstractLattice{
     
     @Override
     public String name() {
-        return "BWn" + n;
+        return "BW" + n;
     }
 
 }

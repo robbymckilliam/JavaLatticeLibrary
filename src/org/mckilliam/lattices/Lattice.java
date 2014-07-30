@@ -1,8 +1,6 @@
 package org.mckilliam.lattices;
 
 import Jama.Matrix;
-import org.mckilliam.lattices.relevant.RelevantVectors;
-import org.mckilliam.lattices.util.PointEnumerator;
 
 /**
  * Class that represents a lattice with arbitrary
@@ -14,12 +12,19 @@ public class Lattice extends AbstractLattice {
     /** The generator matrix for the lattice */
     final protected Matrix B;
     
-    public Lattice(Matrix B){
+    final protected String name;
+        
+    public Lattice(Matrix B, String name){
         this.B = B;     
+        this.name = name;
+    }
+    
+    public Lattice(Matrix B){
+        this(B, "SomeLattice");
     }
     
     public Lattice(double[][] B){
-        this.B = new Matrix(B);
+        this(new Matrix(B));
     }
 
     @Override
@@ -39,7 +44,7 @@ public class Lattice extends AbstractLattice {
 
     @Override
     public String name() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return name;
     }
 
 }

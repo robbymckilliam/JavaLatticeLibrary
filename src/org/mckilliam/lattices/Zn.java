@@ -78,7 +78,7 @@ public class Zn extends AbstractLattice implements LatticeAndClosestVectorInterf
     
     @Override
     public String name() {
-        return "Zn" + n;
+        return "Z" + n;
     }
     
     /** @return An enumeration of the integer lattice */

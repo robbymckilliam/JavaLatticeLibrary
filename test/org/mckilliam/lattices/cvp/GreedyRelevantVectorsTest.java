@@ -12,7 +12,9 @@ import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.E8;
 import org.mckilliam.lattices.Lattice;
 import org.mckilliam.lattices.LatticeAndClosestVector;
+import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.ScaledLattice;
 import org.mckilliam.lattices.Zn;
 import pubsim.VectorFunctions;
 
@@ -125,19 +127,20 @@ public class GreedyRelevantVectorsTest {
         
         for (int itr = 0; itr < iters; itr++) {
 
-            //Matrix B = new E8().generatorMatrix();
+//          LatticeAndClosestVectorInterface lattice = new LatticeAndClosestVector(B); //the lattice of interest
+            LatticeAndClosestVectorInterface lattice = new Zn(n);
+            Matrix B = lattice.generatorMatrix();
             //Matrix B = Matrix.random(m, n); //random generator matrix
-            Matrix B = Matrix.identity(m, m); //try with interger lattice
-            LatticeInterface lattice = new Lattice(B); //the lattice of interest
-            LatticeAndClosestVector latticeX2 = new LatticeAndClosestVector(B.times(2.0)); //sublattice with generator mulitplied by 2
+            //Matrix B = Matrix.identity(m, m); //try with interger lattice
+            LatticeAndClosestVectorInterface latticeX2 = new ScaledLattice(lattice,2); //sublattice with generator mulitplied by 2
 
             //System.out.println(VectorFunctions.print(B));
             //System.out.println(VectorFunctions.print(latticeX2.generatorMatrix()));
 
             Uniform u02 = Uniform.constructFromMinMax(0, 2);
-            Matrix u = new Matrix(m, 1, 0.0);
-            for (int i = 0; i < m; i++) u.set(i, 0, u02.noise());
-            double[] intwicefundppd = B.times(u).getColumnPackedCopy(); //vector uniformly distributed in twice the fundamental parrallelipided
+            double[] u = new double[m];
+            for (int i = 0; i < m; i++) u[i] = u02.noise();
+            double[] intwicefundppd = pubsim.VectorFunctions.matrixMultVector(B, u); //vector uniformly distributed in twice the fundamental parrallelipided
             //System.out.println(VectorFunctions.print(intwicefundppd));
             double[] x = latticeX2.closestPoint(intwicefundppd);
             //System.out.println(VectorFunctions.print(x));
