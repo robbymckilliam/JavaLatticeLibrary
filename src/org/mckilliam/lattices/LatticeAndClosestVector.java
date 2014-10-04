@@ -6,7 +6,7 @@ import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 
 /**
- * General lattice with a nearest point algorithm included with it.
+ * General lattice with a closest point algorithm included with it.
  * By default the sphere decoder is used but you can use other
  * algorithms by using the appropriate constructor
  * @author Robby McKilliam
