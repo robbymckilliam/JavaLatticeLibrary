@@ -73,17 +73,14 @@ public class Mbest extends Babai {
             throw new RuntimeException("Point y and Generator matrix are of different dimension!");
 
         //this will store the nearest point in the variable x
-        //NEED TO CALL THIS, it set yr.  Could change it but meh.
+        //NEED TO CALL THIS, it sets yr.  Could change it but meh.
         computeBabaiPoint(y);
 
         //compute the radius squared of the sphere we are decoding in.
         //Add DELTA to avoid numerical error causing the
         //Babai point to be rejected.
-        //NOT ACUA
         D = VectorFunctions.distance_between2(y, x) + DELTA;
-        //System.out.println("D = " + D);
 
-        //COMPUTE THE NEAREST POINT!
         //set least possible ut[k]
         TreeMap<Double, Vector<Integer>> prevmap = new TreeMap<Double, Vector<Integer>>();
         
@@ -115,17 +112,12 @@ public class Mbest extends Babai {
             m++;
         }
 
-        //System.out.println(prevmap);
-
         //now run the algorithm
         for(k = n-2; k >= 0; k--){
 
             TreeMap<Double, Vector<Integer>> nextmap = new TreeMap<Double, Vector<Integer>>();
             
             for(int Mtimes = 0; Mtimes < prevmap.size(); Mtimes++){
-
-                //System.out.println(prevmap);
-                //System.out.println(prevmap.firstEntry());
 
                 Entry<Double, Vector<Integer>> entry = prevmap.pollFirstEntry();
                 vec = entry.getValue();
@@ -164,7 +156,7 @@ public class Mbest extends Babai {
                 }
             }
             prevmap = nextmap;
-            //System.out.println(prevmap);
+
         }
 
         //there is no garauntee that this point is better than the Babai point
@@ -174,14 +166,10 @@ public class Mbest extends Babai {
 
             if(entry.getKey() < D){
 
-                //System.out.println(prevmap);
                 //now the approximate nearest point is the best point in prevmap
                 vec = entry.getValue();
-                //System.out.println(vec);
                 for(int i =0; i < n; i++ )
                     ubest[i] = (double)(vec.get(tovecIndex(i)).intValue());
-
-
 
                 //compute index u = Uuh so that Gu is nearest point
                 VectorFunctions.matrixMultVector(U, ubest, this.u);
