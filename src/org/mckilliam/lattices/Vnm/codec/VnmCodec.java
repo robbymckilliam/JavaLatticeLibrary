@@ -1,11 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mckilliam.lattices.Vnm.codec;
-
-import org.mckilliam.lattices.Vnm.Vnm;
-import org.mckilliam.lattices.Vnm.codec.generators.UpperTriangularGenerator;
 
 /**
  * Class for encoding and decoding the Vnm lattice based codes.  See the paper

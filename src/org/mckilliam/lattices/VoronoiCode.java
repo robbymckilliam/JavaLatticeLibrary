@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.mckilliam.lattices;
 
 import Jama.Matrix;
@@ -81,8 +76,8 @@ public class VoronoiCode implements java.io.Serializable{
     }
 
     /**
-     * Given a recieved vector, decode it to a codeword
-     * @param x reciveved vector
+     * Given a received vector, decode it to a codeword
+     * @param x received vector
      * @return codeword
      */
     public double[] decode(double[] x){
