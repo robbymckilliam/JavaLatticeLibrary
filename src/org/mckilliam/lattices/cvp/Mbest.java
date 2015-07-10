@@ -75,72 +75,57 @@ public class Mbest extends Babai {
         D = VectorFunctions.distance_between2(y, x) + DELTA;
 
         //set least possible ut[k]
-        TreeMap<Double, Vector<Integer>> prevmap = new TreeMap<Double, Vector<Integer>>();
+        TreeMap<Double, List<Integer>> prevmap = new TreeMap<>();
         
         //ok, set up the initial tree map with the first M elements
         int k = n-1;
         int u = (int)Math.round(yr[k]/R.get(k,k));
         double d = R.get(k, k)*u - yr[k];
-        Vector<Integer> vec = new Vector<Integer>();
-        vec.add(u);
-        addToMap( prevmap, d*d, vec);
+        addToMap( prevmap, d*d, new List<>(u));
         int m = 0;
         boolean keepAdding = true;
         //this is being a bit lazy, it might use a little more that M. No big problem though.
         while(m < M/2 + 1 && keepAdding ){
             //add u+m
-            vec = new Vector<Integer>();
-            vec.add(u+m);
             d = R.get(k, k)*(u+m) - yr[k];
-            keepAdding = addToMap( prevmap, d*d, vec);
-
+            keepAdding = addToMap( prevmap, d*d, new List<>(u+m));
             //add u-m
-            vec = new Vector<Integer>();
-            vec.add(u-m);
             d = R.get(k, k)*(u-m) - yr[k];
-            keepAdding |= addToMap( prevmap, d*d, vec);
-
+            keepAdding |= addToMap( prevmap, d*d, new List<>(u-m));
             m++;
         }
 
         //now run the algorithm
         for(k = n-2; k >= 0; k--){
 
-            TreeMap<Double, Vector<Integer>> nextmap = new TreeMap<Double, Vector<Integer>>();
+            TreeMap<Double, List<Integer>> nextmap = new TreeMap<>();
             
             for(int Mtimes = 0; Mtimes < prevmap.size(); Mtimes++){
 
-                Entry<Double, Vector<Integer>> entry = prevmap.pollFirstEntry();
-                vec = entry.getValue();
+                Entry<Double, List<Integer>> entry = prevmap.pollFirstEntry();
+                List<Integer> vec = entry.getValue();
                 double rdist = entry.getKey();
                 //compute the sum of R[k][k+i]*uh[k+i]'s
                 double rsum = 0.0;
                 for(int i = k+1; i < n; i++ ){
-                    int tu = vec.get(tovecIndex(i));
+                    int tu = vec.element;
                     rsum += tu*R.get(k, i);
+                    vec = vec.tail;
                 }
                 u = (int)Math.round((yr[k] - rsum)/R.get(k,k));
                 d = R.get(k, k)*u + rsum - yr[k];
-                Vector<Integer> veccopy = (Vector<Integer>)vec.clone();
-                veccopy.add(u);
-                addToMap( nextmap, d*d + rdist, veccopy);
+                addToMap( nextmap, d*d + rdist, new List<>(u,entry.getValue()));
 
                 m = 0;
                 keepAdding = true;
                 //this is being a bit lazy, it might use a little more that M. No big problem though.
                 while(m < M/2 + 1 && keepAdding && (d*d + rdist) < D){
                     //add u+m
-                    veccopy = (Vector<Integer>)vec.clone();
-                    veccopy.add(u+m);
                     d = R.get(k, k)*(u+m) + rsum - yr[k];
-                    keepAdding = addToMap( nextmap, d*d + rdist, veccopy);
-
+                    keepAdding = addToMap( nextmap, d*d + rdist, new List<>(u+m,entry.getValue()));
                     //add u-m
-                    veccopy = (Vector<Integer>)vec.clone();
-                    veccopy.add(u-m);
                     d = R.get(k, k)*(u-m) + rsum - yr[k];
-                    keepAdding |= addToMap( nextmap, d*d + rdist, veccopy);
-
+                    keepAdding |= addToMap( nextmap, d*d + rdist, new List<>(u-m,entry.getValue()));
                     m++;
                 }
             }
@@ -151,15 +136,17 @@ public class Mbest extends Babai {
         //there is no garauntee that this point is better than the Babai point
         //so check it and update only if it is better.
         if(prevmap.size() != 0){
-            Entry<Double, Vector<Integer>> entry = prevmap.firstEntry();
+            Entry<Double, List<Integer>> entry = prevmap.firstEntry();
 
             if(entry.getKey() < D){
 
                 //now the approximate nearest point is the best point in prevmap
-                vec = entry.getValue();
-                for(int i =0; i < n; i++ )
-                    ubest[i] = (double)(vec.get(tovecIndex(i)).intValue());
-
+                List<Integer> vec = entry.getValue();
+                for(int i =0; i < n; i++ ) {
+                    ubest[i] = vec.element.doubleValue();
+                    vec = vec.tail;
+                }
+                
                 //compute index u = Uuh so that Gu is nearest point
                 VectorFunctions.matrixMultVector(U, ubest, this.u);
 
@@ -177,7 +164,7 @@ public class Mbest extends Babai {
      * Also, only adds if the distance is less than D (i.e. the Babai distance).
      * Also returns whether the map was added to.
      */
-    private boolean addToMap(TreeMap<Double, Vector<Integer>> map, double d, Vector<Integer> vec) {
+    private boolean addToMap(TreeMap<Double, List<Integer>> map, double d, List<Integer> vec) {
         boolean addedToMap = false;
         if( d < D ){
             map.put(d, vec);
@@ -192,7 +179,22 @@ public class Mbest extends Babai {
     //just invert the indices for the Vector<Integers>
     private int tovecIndex(int i){ return n - 1 - i; }
     
+    /** Extremely simple immutable singly linked list */
+    public static class List<T> {
 
+        public final List<T> tail;
+        public final T element;
+
+        public List(T element, List tail) {
+            this.tail = tail;
+            this.element = element;
+        }
+
+        public List(T element) {
+            this(element, null);
+        }
+
+    }
     
 
 }
