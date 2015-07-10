@@ -2,7 +2,6 @@ package org.mckilliam.lattices.cvp;
 
 import java.util.Map.Entry;
 import java.util.TreeMap;
-import java.util.Vector;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.reduction.LLL;
