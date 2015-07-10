@@ -2,10 +2,15 @@ package org.mckilliam.lattices.Vnm;
 
 import Jama.Matrix;
 import Jama.QRDecomposition;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.Vector;
 import static org.junit.Assert.*;
 import org.junit.*;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Vnm.Vnm;
+import org.mckilliam.lattices.util.PointEnumerator;
 
 /**
  *
@@ -180,6 +185,32 @@ public class VnmTest {
         System.out.println(instance.inradius());
         System.out.println(instance.kissingNumber());
 
+    }
+    
+    @Test 
+    public void relevantVectorNorms() {
+        System.out.println("print out number of relevant vectors of given norm");
+        
+        int n = 17;
+        int a = 4;
+
+        Vnm instance = new Vnm(n, a);
+        PointEnumerator rvs = instance.relevantVectors();
+        
+        Map<Integer, Integer> rvhistogram = new TreeMap<>();
+        int numvector = 0;
+        for( Matrix rv : rvs ){
+            double length = rv.normF();
+            Integer norm = (int)Math.round(length*length);
+            Integer count = rvhistogram.containsKey(norm) ? rvhistogram.get(norm) : 0;
+            rvhistogram.put(norm, count + 1); //increment or create
+            numvector++; //count the number of relevant vectors
+        }
+        double ratiomax = ((double)(numvector))/(Math.pow(2,n+1)-2);
+        System.out.println("There are " + numvector + " relevant vectors. " + ratiomax);
+        for( Entry<Integer,Integer> e  : rvhistogram.entrySet() )
+            System.out.println(e.getKey() + "\t" + e.getValue());
+            
     }
 
     

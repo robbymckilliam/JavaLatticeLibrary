@@ -6,7 +6,7 @@ import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 
 /**
- * General lattice with a nearest point algorithm included with it.
+ * General lattice with a closest point algorithm included with it.
  * By default the sphere decoder is used but you can use other
  * algorithms by using the appropriate constructor
  * @author Robby McKilliam
@@ -15,14 +15,22 @@ public class LatticeAndClosestVector extends Lattice implements LatticeAndCloses
 
     private final ClosestVectorInterface decoder;
 
+    public LatticeAndClosestVector(LatticeInterface L, ClosestVectorInterface np){
+        this(L.generatorMatrix(), L.name(),np);
+    }
+    
+    /** Default closest point algorithm is the Schnorr-Euchner sphere decoder */
+    public LatticeAndClosestVector(LatticeInterface L){
+        this(L.generatorMatrix(), L.name());
+    }
+    
     public LatticeAndClosestVector(Matrix B, String name, ClosestVectorInterface np){
         super(B, name);
         decoder = np;
     }
     
     public LatticeAndClosestVector(Matrix B, ClosestVectorInterface np){
-        super(B, "SomeLattice");
-        decoder = np;
+        this(B, "SomeLattice",np);
     }
     
     public LatticeAndClosestVector(Matrix B, String name){
