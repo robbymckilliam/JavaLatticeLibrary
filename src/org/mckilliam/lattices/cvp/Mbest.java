@@ -1,6 +1,3 @@
-/*
- */
-
 package org.mckilliam.lattices.cvp;
 
 import java.util.Map.Entry;
@@ -12,7 +9,8 @@ import org.mckilliam.lattices.reduction.LLL;
 import org.mckilliam.lattices.reduction.LatticeReduction;
 
 /**
- * 
+ * The Mbest approximate closest vector algorithm.  Allies the same tree first search
+ * used by the sphere decoder, but culls branches to ensure that only M remain at any time.
  * @author Robby McKilliam
  */
 public class Mbest extends Babai {
@@ -61,12 +59,7 @@ public class Mbest extends Babai {
         Q = QR.getQ();
         Qtrans = Q.transpose();
     }
-    
-    /** Returns an Mbest algorithm that does not perform any reduction first */
-    public static Mbest MbestNoLLL(LatticeInterface L, int M) {
-        return new Mbest(L,M,new org.mckilliam.lattices.reduction.None());
-    }
-            
+                
     @Override
     public double[] closestPoint(double[] y) {
         if(m != y.length)
@@ -93,9 +86,7 @@ public class Mbest extends Babai {
         addToMap( prevmap, d*d, vec);
         int m = 0;
         boolean keepAdding = true;
-        //this is being a bit lazy, it might use a little more that M.
-        //no big problem though.
-        //while(m < M/2 + 1 ) {
+        //this is being a bit lazy, it might use a little more that M. No big problem though.
         while(m < M/2 + 1 && keepAdding ){
             //add u+m
             vec = new Vector<Integer>();
@@ -136,10 +127,8 @@ public class Mbest extends Babai {
 
                 m = 0;
                 keepAdding = true;
-                //this is being a bit lazy, it might use a little more that M.
-                //no big problem though.
-                //while(m < M/2 + 1 ) {
-                while(m < M/2 + 1 && keepAdding ){
+                //this is being a bit lazy, it might use a little more that M. No big problem though.
+                while(m < M/2 + 1 && keepAdding && (d*d + rdist) < D){
                     //add u+m
                     veccopy = (Vector<Integer>)vec.clone();
                     veccopy.add(u+m);
