@@ -176,9 +176,6 @@ public class Mbest extends Babai {
         return addedToMap;
     }
 
-    //just invert the indices for the Vector<Integers>
-    private int tovecIndex(int i){ return n - 1 - i; }
-    
     /** Extremely simple immutable singly linked list */
     public static class List<T> {
 
