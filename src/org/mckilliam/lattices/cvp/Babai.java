@@ -3,7 +3,6 @@ package org.mckilliam.lattices.cvp;
 import Jama.Matrix;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.ClosestVectorInterface;
 import org.mckilliam.lattices.reduction.LLL;
 import org.mckilliam.lattices.reduction.LatticeReduction;
 

@@ -3,8 +3,8 @@ package org.mckilliam.lattices.An;
 import Jama.Matrix;
 import pubsim.Util;
 import org.mckilliam.lattices.AbstractLattice;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
-import org.mckilliam.lattices.ClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.ClosestVectorInterface;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 

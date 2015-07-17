@@ -1,5 +1,6 @@
 package org.mckilliam.lattices;
 
+import org.mckilliam.lattices.cvp.LatticeAndClosestVector;
 import Jama.Matrix;
 import static pubsim.Util.*;
 import pubsim.VectorFunctions;

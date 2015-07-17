@@ -9,7 +9,7 @@ import Jama.Matrix;
 import static pubsim.Util.*;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.reduction.LLL;
 

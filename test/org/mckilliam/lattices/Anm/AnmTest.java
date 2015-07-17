@@ -10,8 +10,8 @@ import Jama.Matrix;
 import junit.framework.TestCase;
 import pubsim.VectorFunctions;
 import pubsim.VectorFunctionsTest;
-import org.mckilliam.lattices.LatticeAndClosestVector;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVector;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  *

@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import static pubsim.VectorFunctions.sum2;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  *

@@ -4,7 +4,7 @@ import org.mckilliam.lattices.Anstar.Anstar;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
-import org.mckilliam.lattices.ClosestVectorInterface;
+import org.mckilliam.lattices.cvp.ClosestVectorInterface;
 
 /**
  * O(N^3log(N)) version of the nearest point algorithm for Vnm*.

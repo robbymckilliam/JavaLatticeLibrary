@@ -1,5 +1,6 @@
 package org.mckilliam.lattices;
 
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 import Jama.Matrix;
 import org.mckilliam.lattices.util.IntegerVectors;
 import static pubsim.VectorFunctions.add;

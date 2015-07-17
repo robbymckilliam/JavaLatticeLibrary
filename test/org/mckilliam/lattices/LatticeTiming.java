@@ -1,6 +1,6 @@
 package org.mckilliam.lattices;
 
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

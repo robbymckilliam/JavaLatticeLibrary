@@ -7,7 +7,7 @@ import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 import pubsim.AllCliquesOfSize;
-import org.mckilliam.lattices.LatticeAndClosestVector;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import static pubsim.VectorFunctions.dot;
 import static org.mckilliam.lattices.firstkind.FirstKindCheckSlow.isSuperbase;

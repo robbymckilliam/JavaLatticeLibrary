@@ -1,8 +1,9 @@
-package org.mckilliam.lattices;
+package org.mckilliam.lattices.cvp;
 
 import org.mckilliam.lattices.Anm.AnmBucket;
 import java.util.Date;
 import java.util.Random;
+import org.mckilliam.lattices.AbstractLattice;
 
 /**
  * Abstract class for Nearest point algorithms.  You are not required

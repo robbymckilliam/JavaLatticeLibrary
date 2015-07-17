@@ -2,7 +2,7 @@ package org.mckilliam.lattices.leech;
 
 import static pubsim.VectorFunctions.add;
 import org.mckilliam.lattices.E8;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.ScaledLattice;
 
 /**

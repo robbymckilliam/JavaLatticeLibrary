@@ -11,8 +11,6 @@ import org.mckilliam.distributions.Uniform;
 import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.E8;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.LatticeAndClosestVector;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.ScaledLattice;
 import org.mckilliam.lattices.Zn;

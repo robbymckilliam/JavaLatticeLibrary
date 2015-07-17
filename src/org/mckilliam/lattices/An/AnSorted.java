@@ -4,7 +4,7 @@ import java.util.Arrays;
 import pubsim.IndexedDouble;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.Anstar;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  * Nearest point algorithm for the Lattice An.  This uses the sorting

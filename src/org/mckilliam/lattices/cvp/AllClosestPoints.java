@@ -6,8 +6,6 @@ import java.util.Set;
 import pubsim.VectorFunctions;
 import static pubsim.VectorFunctions.matrixMultVector;
 import static pubsim.VectorFunctions.columnMatrix;
-import org.mckilliam.lattices.LatticeAndClosestVector;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
 
 /**

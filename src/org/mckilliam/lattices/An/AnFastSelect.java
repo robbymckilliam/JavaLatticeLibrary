@@ -4,7 +4,7 @@ import org.mckilliam.lattices.Anstar.Anstar;
 import pubsim.FastSelection;
 import pubsim.IndexedDouble;
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  * Simple linear time An algorithm using the Rivest Tarjan

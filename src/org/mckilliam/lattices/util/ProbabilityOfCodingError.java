@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import org.mckilliam.distributions.NoiseGenerator;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  * 

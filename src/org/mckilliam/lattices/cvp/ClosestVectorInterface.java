@@ -4,7 +4,7 @@
  * Created on 12 August 2007, 20:23
  */
 
-package org.mckilliam.lattices;
+package org.mckilliam.lattices.cvp;
 
 import java.io.Serializable;
 

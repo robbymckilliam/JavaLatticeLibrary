@@ -19,7 +19,7 @@ import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
 import org.mckilliam.lattices.Dn;
 import org.mckilliam.lattices.E6;
-import org.mckilliam.lattices.LatticeAndClosestVector;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import static org.mckilliam.lattices.firstkind.FirstKindCheckSlow.isObtuse;
 
@@ -98,17 +98,17 @@ public class FirstKindCheckTest {
         assertTrue(new FirstKindCheck(B).isFirstKind); 
     }
     
-    @Test
-    public void testDnlatticesisfirstKind() {
-        System.out.println("Test that the root lattice D3 is first kind");
-        for(int n = 4; n <= 4; n++){
-            FirstKindCheck f = new FirstKindCheck(new Dn(n));
-            assertTrue(f.isFirstKind); 
-            for( Matrix v : f.obtuseSuperbase() ) System.out.print(VectorFunctions.print(v.transpose()));
-            System.out.println();
-            assertTrue(FirstKindCheckSlow.isBasis(f.obtuseSuperbase(), new Dn(n)));
-        }
-    }
+//    @Test
+//    public void testDnlatticesisfirstKind() {
+//        System.out.println("Test that the root lattice D3 is first kind");
+//        for(int n = 4; n <= 4; n++){
+//            FirstKindCheck f = new FirstKindCheck(new Dn(n));
+//            assertTrue(f.isFirstKind); 
+//            for( Matrix v : f.obtuseSuperbase() ) System.out.print(VectorFunctions.print(v.transpose()));
+//            System.out.println();
+//            assertTrue(FirstKindCheckSlow.isBasis(f.obtuseSuperbase(), new Dn(n)));
+//        }
+//    }
     
 //    @Test
 //    public void testD4isfirstKind() {

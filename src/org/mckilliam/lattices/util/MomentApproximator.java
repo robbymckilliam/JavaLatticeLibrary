@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import static pubsim.VectorFunctions.norm;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  * Approximate moments of the Voronoi cell of a lattice by brute force

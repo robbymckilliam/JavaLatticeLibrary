@@ -3,7 +3,7 @@ package org.mckilliam.lattices.Anm;
 import Jama.Matrix;
 import org.mckilliam.lattices.An.AnSorted;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
+import org.mckilliam.lattices.cvp.ClosestVectorStandardNumenclature;
 
 /**
  * Abstract class for the Coxeter lattice Anm

@@ -7,7 +7,7 @@ package org.mckilliam.lattices.Vn1Star;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.Anstar.AnstarVaughan;
-import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
+import org.mckilliam.lattices.cvp.ClosestVectorStandardNumenclature;
 
 /**
  *

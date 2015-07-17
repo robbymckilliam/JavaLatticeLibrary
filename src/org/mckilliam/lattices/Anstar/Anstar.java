@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.Anstar;
 
 import Jama.Matrix;
-import org.mckilliam.lattices.ClosestVectorStandardNumenclature;
+import org.mckilliam.lattices.cvp.ClosestVectorStandardNumenclature;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 

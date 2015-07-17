@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.mckilliam.lattices.An.AnFastSelect;
 import org.mckilliam.lattices.Dn;
 import org.mckilliam.lattices.E8;
-import org.mckilliam.lattices.LatticeAndClosestVector;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVector;
 import org.mckilliam.lattices.LatticeInterface;
 import org.mckilliam.lattices.Zn;
 import org.mckilliam.lattices.util.IntegerVectors;

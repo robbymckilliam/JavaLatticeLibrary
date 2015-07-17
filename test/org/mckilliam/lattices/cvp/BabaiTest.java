@@ -9,7 +9,6 @@ import org.junit.*;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.AnstarSorted;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.Zn;
 import org.mckilliam.lattices.reduction.HKZ;
 import org.mckilliam.lattices.reduction.LLL;

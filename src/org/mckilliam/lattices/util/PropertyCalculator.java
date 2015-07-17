@@ -1,7 +1,7 @@
 package org.mckilliam.lattices.util;
 
 import java.io.Serializable;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  * Abstract class for brute forcing approximating properties of lattices.

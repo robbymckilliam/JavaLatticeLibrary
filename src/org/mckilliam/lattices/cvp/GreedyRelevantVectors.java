@@ -4,7 +4,6 @@ import Jama.Matrix;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
-import org.mckilliam.lattices.ClosestVectorInterface;
 import org.mckilliam.lattices.LatticeInterface;
 
 /**

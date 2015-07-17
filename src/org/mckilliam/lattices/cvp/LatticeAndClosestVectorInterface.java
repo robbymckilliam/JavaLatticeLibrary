@@ -1,4 +1,7 @@
-package org.mckilliam.lattices;
+package org.mckilliam.lattices.cvp;
+
+import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.cvp.ClosestVectorInterface;
 
 /**
  * Interface for lattices with nearest specific nearest point algorithms

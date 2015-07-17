@@ -16,7 +16,6 @@ import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.AnstarSorted;
 import org.mckilliam.lattices.Lattice;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.Zn;
 
 /**

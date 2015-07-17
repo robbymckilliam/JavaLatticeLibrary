@@ -7,7 +7,7 @@ package org.mckilliam.lattices.leech;
 
 import Jama.Matrix;
 import pubsim.VectorFunctions;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.Zn;
 
 /**

@@ -3,7 +3,7 @@ package org.mckilliam.lattices.firstkind;
 import Jama.Matrix;
 import org.mckilliam.distributions.RealRandomVariable;
 import org.mckilliam.lattices.Lattice;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 
 /**
  * Class describes lattices of Voronoi's first kind.  These lattices have an obtuse superbasis.

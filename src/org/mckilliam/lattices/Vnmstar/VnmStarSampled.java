@@ -10,7 +10,7 @@ import Jama.Matrix;
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.Anstar.Anstar;
 import org.mckilliam.lattices.Anstar.AnstarLinear;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
 import org.mckilliam.lattices.util.PointInParallelepiped;
 
 /**

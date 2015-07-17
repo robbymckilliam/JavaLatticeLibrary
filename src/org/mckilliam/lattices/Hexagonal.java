@@ -1,5 +1,6 @@
 package org.mckilliam.lattices;
 
+import org.mckilliam.lattices.cvp.ClosestVectorStandardNumenclature;
 import Jama.Matrix;
 import static pubsim.VectorFunctions.matrixMultVector;
 import static pubsim.VectorFunctions.round;

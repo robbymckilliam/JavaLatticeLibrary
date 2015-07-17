@@ -8,7 +8,7 @@ import pubsim.CombinationEnumerator;
 import pubsim.VectorFunctions;
 import static pubsim.VectorFunctions.dot;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndClosestVector;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVector;
 
 /**
  * Tests whether a given lattice is of first kind or not.  This slow implementation searches

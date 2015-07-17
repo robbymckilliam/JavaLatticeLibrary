@@ -2,8 +2,8 @@ package org.mckilliam.lattices.util;
 
 import Jama.Matrix;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.LatticeAndClosestVectorInterface;
-import org.mckilliam.lattices.ClosestVectorInterface;
+import org.mckilliam.lattices.cvp.LatticeAndClosestVectorInterface;
+import org.mckilliam.lattices.cvp.ClosestVectorInterface;
 import org.mckilliam.lattices.cvp.SphereDecoder;
 import pubsim.VectorFunctions;
 

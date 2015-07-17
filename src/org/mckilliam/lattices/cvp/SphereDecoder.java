@@ -2,7 +2,6 @@ package org.mckilliam.lattices.cvp;
 
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.ClosestVectorInterface;
 
 /**
  * Sphere decoder that uses the Babai point
