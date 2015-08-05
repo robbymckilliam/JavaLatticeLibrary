@@ -1,7 +1,5 @@
 package org.mckilliam.lattices.firstkind;
 
-import org.mckilliam.lattices.firstkind.FirstKindCheck;
-import org.mckilliam.lattices.firstkind.FirstKindCheckSlow;
 import Jama.Matrix;
 import java.util.HashSet;
 import java.util.Set;

@@ -2,6 +2,8 @@ package org.mckilliam.lattices.cvp;
 
 import pubsim.VectorFunctions;
 import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.reduction.LLL;
+import org.mckilliam.lattices.reduction.LatticeReduction;
 
 /**
  * Sphere decoder that uses the Babai point
@@ -22,8 +24,12 @@ public class SphereDecoder extends Babai
     //small number to avoid numerical errors in branches.
     protected double DELTA = 1e-8;
 
-    public SphereDecoder(LatticeInterface L){
-        super(L);
+    public SphereDecoder(LatticeInterface L) {
+        this(L, new LLL());
+    }
+    
+    public SphereDecoder(LatticeInterface L, LatticeReduction lr){
+        super(L, lr);
         ut = new double[n];
         ubest = new double[n];
         xr = new double[n];

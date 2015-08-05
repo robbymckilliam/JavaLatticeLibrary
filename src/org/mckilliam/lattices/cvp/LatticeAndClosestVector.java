@@ -1,10 +1,8 @@
 package org.mckilliam.lattices.cvp;
 
-import org.mckilliam.lattices.cvp.ClosestVectorInterface;
 import Jama.Matrix;
 import org.mckilliam.lattices.Lattice;
 import org.mckilliam.lattices.LatticeInterface;
-import org.mckilliam.lattices.cvp.SphereDecoderSchnorrEuchner;
 import org.mckilliam.lattices.relevant.RelevantVectors;
 import org.mckilliam.lattices.util.PointEnumerator;
 

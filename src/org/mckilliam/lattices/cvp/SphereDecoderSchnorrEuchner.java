@@ -2,6 +2,8 @@ package org.mckilliam.lattices.cvp;
 
 import static pubsim.VectorFunctions.matrixMultVector;
 import org.mckilliam.lattices.LatticeInterface;
+import org.mckilliam.lattices.reduction.LLL;
+import org.mckilliam.lattices.reduction.LatticeReduction;
 
 /**
  * This is a sphere decoder that searches the 'planes' in a greedy
@@ -10,9 +12,13 @@ import org.mckilliam.lattices.LatticeInterface;
  * @author Robby McKilliam
  */
 public class SphereDecoderSchnorrEuchner extends SphereDecoder{
+    
+    public SphereDecoderSchnorrEuchner(LatticeInterface L) {
+        this(L, new LLL());
+    }
 
-    public SphereDecoderSchnorrEuchner(LatticeInterface L){
-        super(L);
+    public SphereDecoderSchnorrEuchner(LatticeInterface L,  LatticeReduction lr){
+        super(L, lr);
     }
 
     /** 
