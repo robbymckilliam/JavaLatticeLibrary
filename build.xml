@@ -44,7 +44,7 @@
 	  <include name="*.jar" />
 	</fileset>
       </classpath>
-      <!-- <formatter type="plain" usefile="false"/> -->
+      <formatter type="plain"/>
       <batchtest fork="yes" todir="${base.dir}">
 	<fileset dir="${build.dir}">
 	  <include name="**/*Test.class"/>
